@@ -1,13 +1,11 @@
+import {Box} from "@mui/material"
 
 const homepage = () => {
   return (
-    <div>
+    <Box>
       homepage Thấy tui chưa
-<<<<<<< Updated upstream
-=======
       tra loi lai ne
->>>>>>> Stashed changes
-    </div>
+    </Box>
   )
 }
 
