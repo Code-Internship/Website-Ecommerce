@@ -27,4 +27,15 @@ npm install
 ```bash
 php artisan migrate --seed
 ```
-
+- Run
+```bash
+npm install vite@latest
+```
+- Tiếp theo di chuyển đến thư mục
+```bash
+cd react
+```
+- Chạy lênh sau để khởi động hệ thống
+```bash
+npm run dev
+```
