@@ -1,15 +1,17 @@
 import { Box } from "@mui/material";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { NavLink, Outlet } from "react-router-dom";
+import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Navigate, NavLink, Outlet } from "react-router-dom";
+import { userStateContext } from "../contexts/ContextProvider";
 
-const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
+// const user = {
+//   name: "Tom Cook",
+//   email: "tom@example.com",
+//   imageUrl:
+//     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+// };
+
 const navigation = [
   { name: "HOME", to: "/" },
   { name: "SHOP", to: "/Shop" },
@@ -17,18 +19,29 @@ const navigation = [
   { name: "PRODUCTS", to: "/Products" },
   { name: "BRANDS", to: "/Brands" },
 ];
-const userNavigation = [
-  { name: "My Account", to: "#" },
-  { name: "Order Status", to: "#" },
-  { name: "Help & Contact", to: "#" },
-  { name: "Sign out", to: "#" },
-];
+
+// const userNavigation = [
+//   // { name: "My Account", to: "#" },
+//   // { name: "Order Status", to: "#" },
+//   // { name: "Help & Contact", to: "#" },
+//   { name: "Sign out", href: "#" },
+// ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const DefaultLayout = () => {
+  const { currenUser , userToken } = userStateContext();
+
+if(!userToken){
+  return <Navigate to="signin"/>
+}
+
+  const logout = (ev) => {
+    ev.preventDefault();
+    console.log("Logout");
+  };
   return (
     <Box>
       <Box className="min-h-full">
@@ -74,11 +87,12 @@ const DefaultLayout = () => {
                           <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="absolute -inset-1.5" />
                             <span className="sr-only">Open user menu</span>
-                            <img
+                            <UserIcon className="w-10 h-10 text-white bg-black/25 p-2 rounded-full" />
+                            {/* <img
                               className="h-8 w-8 rounded-full"
                               src={user.imageUrl}
                               alt=""
-                            />
+                            /> */}
                           </Menu.Button>
                         </Box>
                         <Transition
@@ -91,7 +105,18 @@ const DefaultLayout = () => {
                           leaveTo="transform opacity-0 scale-95"
                         >
                           <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            {userNavigation.map((item) => (
+                            <Menu.Item>
+                              <a
+                                href="#"
+                                onClick={(ev) => logout(ev)}
+                                className={
+                                  "block px-4 py-2 text-sm text-gray-700"
+                                }
+                              >
+                                Sign out
+                              </a>
+                            </Menu.Item>
+                            {/* {userNavigation.map((item) => (
                               <Menu.Item key={item.name}>
                                 {({ active }) => (
                                   <a
@@ -105,7 +130,7 @@ const DefaultLayout = () => {
                                   </a>
                                 )}
                               </Menu.Item>
-                            ))}
+                            ))} */}
                           </Menu.Items>
                         </Transition>
                       </Menu>
@@ -154,23 +179,34 @@ const DefaultLayout = () => {
                 <Box className="border-t border-gray-700 pb-3 pt-4">
                   <Box className="flex items-center px-5">
                     <Box className="flex-shrink-0">
-                      <img
+                      <UserIcon className="w-10 h-10 text-white bg-black/25 p-2 rounded-full" />
+                      {/* <img
                         className="h-10 w-10 rounded-full"
-                        src={user.imageUrl}
+                        src={currenUser.imageUrl}
                         alt=""
-                      />
+                      /> */}
                     </Box>
                     <Box className="ml-3">
                       <Box className="text-base font-medium leading-none text-white">
-                        {user.name}
+                        {currenUser.name}
                       </Box>
                       <Box className="text-sm font-medium leading-none text-gray-400">
-                        {user.email}
+                        {currenUser.email}
                       </Box>
                     </Box>
                   </Box>
                   <Box className="mt-3 space-y-1 px-2">
-                    {userNavigation.map((item) => (
+                    <Disclosure.Button
+                      as="a"
+                      href="#"
+                      onClick={(ev) => logout(ev)}
+                      className={
+                        "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                      }
+                    >
+                      Sign out
+                    </Disclosure.Button>
+                    {/* {userNavigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}
                         as="a"
@@ -179,7 +215,7 @@ const DefaultLayout = () => {
                       >
                         {item.name}
                       </Disclosure.Button>
-                    ))}
+                    ))} */}
                   </Box>
                 </Box>
               </Disclosure.Panel>

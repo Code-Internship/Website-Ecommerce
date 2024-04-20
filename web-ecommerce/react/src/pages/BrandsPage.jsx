@@ -2,8 +2,7 @@ import PageComponent from "../components/PageComponent";
 
 const BrandsPage = () => {
   return (
-    <PageComponent title=
-    "Brands">
+    <PageComponent title="Brands">
       Brands
     </PageComponent>
 
