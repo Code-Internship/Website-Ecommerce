@@ -8,6 +8,7 @@ import ShopPage from "../pages/ShopPage.jsx";
 import BlogPage from "../pages/BlogPage.jsx";
 import ProductsPage from "../pages/ProductsPage.jsx";
 import BrandsPage from "../pages/BrandsPage.jsx";
+import NotFound from "../pages/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +16,8 @@ const router = createBrowserRouter([
     element: <DefaultLayout />,
     children: [
       {
-        path:"/Home",
-        element: <Navigate to="/"/>
+        path: "/Home",
+        element: <Navigate to="/" />,
       },
       {
         path: "/",
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
         element: <Signup />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
