@@ -15,7 +15,9 @@ php artisan key:generate --ansi
 ```
 - Tạo database tên
 ```bash
-db_ecommerce` (hoặc bạn thay đổi tên trong .env) tại localhost
+db_ecommerce
+```
+(hoặc bạn thay đổi tên trong .env) tại localhost
 - Chỉnh sửa `.env` file
 - Run
 ```bash
