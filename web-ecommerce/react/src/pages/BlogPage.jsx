@@ -1,11 +1,11 @@
 import PageComponent from "../components/PageComponent";
 
-const homepage = () => {
+const BlogPage = () => {
   return (
-    <PageComponent title="Home">
-      Home
+    <PageComponent title="Blog">
+      Blog
     </PageComponent>
   );
 };
 
-export default homepage;
+export default BlogPage;
