@@ -1,6 +1,10 @@
 ## Hướng dẫn cài đặt
 
-- Clone the repo
+- Clone the
+- Run
+```bash
+git clone https://github.com/Code-Internship/Website-Ecommerce.git
+```
 - Run
 ```bash
 composer install
