@@ -24,7 +24,7 @@ class AuthController extends Controller
         return response([
             'user' => $user,
             'token' => $token
-        ], 201);
+        ]);
     }
 
     public function signin(SigninRequest $resquest)
@@ -44,13 +44,13 @@ class AuthController extends Controller
         return response([
             'user' => $user,
             'token' => $token
-        ], 201);
+        ]);
     }
 
     public function signout(Request $resquest)
     {
         $user = Auth::user();
-        $user->currenAccessToken()->delete();
+        $user->currentAccessToken()->delete();
 
         return response([
             'success' => true

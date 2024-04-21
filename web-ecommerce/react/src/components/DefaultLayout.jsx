@@ -4,13 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Navigate, NavLink, Outlet } from "react-router-dom";
 import { userStateContext } from "../contexts/ContextProvider";
-
-// const user = {
-//   name: "Tom Cook",
-//   email: "tom@example.com",
-//   imageUrl:
-//     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-// };
+import axiosClient from "../axios";
 
 const navigation = [
   { name: "HOME", to: "/" },
@@ -32,16 +26,21 @@ function classNames(...classes) {
 }
 
 const DefaultLayout = () => {
-  const { currenUser , userToken } = userStateContext();
+  const { currentUser, userToken, setCurrentUser, setUserToken } =
+    userStateContext();
 
-if(!userToken){
-  return <Navigate to="signin"/>
-}
+  if (!userToken) {
+    return <Navigate to="signin" />;
+  }
 
-  const logout = (ev) => {
+  const signout = (ev) => {
     ev.preventDefault();
-    console.log("Logout");
+    axiosClient.post("/signout").then((res) => {
+      setCurrentUser({});
+      setUserToken(null);
+    });
   };
+
   return (
     <Box>
       <Box className="min-h-full">
@@ -108,7 +107,7 @@ if(!userToken){
                             <Menu.Item>
                               <a
                                 href="#"
-                                onClick={(ev) => logout(ev)}
+                                onClick={(ev) => signout(ev)}
                                 className={
                                   "block px-4 py-2 text-sm text-gray-700"
                                 }
@@ -182,16 +181,16 @@ if(!userToken){
                       <UserIcon className="w-10 h-10 text-white bg-black/25 p-2 rounded-full" />
                       {/* <img
                         className="h-10 w-10 rounded-full"
-                        src={currenUser.imageUrl}
+                        src={currentUser.imageUrl}
                         alt=""
                       /> */}
                     </Box>
                     <Box className="ml-3">
                       <Box className="text-base font-medium leading-none text-white">
-                        {currenUser.name}
+                        {currentUser.name}
                       </Box>
                       <Box className="text-sm font-medium leading-none text-gray-400">
-                        {currenUser.email}
+                        {currentUser.email}
                       </Box>
                     </Box>
                   </Box>
@@ -199,7 +198,7 @@ if(!userToken){
                     <Disclosure.Button
                       as="a"
                       href="#"
-                      onClick={(ev) => logout(ev)}
+                      onClick={(ev) => signout(ev)}
                       className={
                         "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                       }
