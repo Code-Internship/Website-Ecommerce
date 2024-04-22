@@ -10,6 +10,9 @@ import ProductsPage from "../pages/ProductsPage.jsx";
 import BrandsPage from "../pages/BrandsPage.jsx";
 import NotFound from "../pages/NotFound.jsx";
 
+/**
+ * router is an object that defines the routes for the application.
+ */
 const router = createBrowserRouter([
   {
     path: "/",

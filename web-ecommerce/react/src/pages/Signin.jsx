@@ -5,26 +5,34 @@ import { userStateContext } from "../contexts/ContextProvider.jsx";
 import { useState } from "react";
 
 const signin = () => {
+  // Lấy các hàm setCurrentUser và setUserToken từ userStateContext.
   const { setCurrentUser, setUserToken } = userStateContext();
+
+  // Khởi tạo các biến trạng thái cho email, password, and error messages.
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState({ __html: "" });
 
+  // hàm xử lý onSubmit
   const onSubmit = (ev) => {
     ev.preventDefault();
     setError({ __html: "" });
 
+    // Gửi yêu cầu POST tới máy chủ để đăng nhập người dùng.
     axiosClient
       .post("/signin", {
         email: email,
         password: password,
       })
+
+      //  Nếu yêu cầu thành công, hãy đặt mã thông báo current user and user token
       .then(({ data }) => {
         setCurrentUser(data.user);
         setUserToken(data.token);
       })
       .catch((error) => {
         if (error.response) {
+          // Nếu yêu cầu không thành công, trích xuất thông báo lỗi và hiển thị chúng.
           const finalErrors = Object.values(error.response.data.errors).reduce(
             (accum, next) => [...accum, ...next],
             []
@@ -38,22 +46,31 @@ const signin = () => {
 
   return (
     <Box>
+      {/** Heading */}
       <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
         Sign in to your account
       </h2>
+      {/** Heading */}
+
+      {/** Hiện thị thông báo lỗi */}
       {error.__html && (
         <div
           className="bg-red-500 rounded py-2 px-3 text-white"
           dangerouslySetInnerHTML={error}
         ></div>
       )}
+      {/** Hiện thị thông báo lỗi */}
+
+      {/** Form đang nhập */}
       <Box className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        {/** onSubmit={onSubmit} Xác nhận submit form */}
         <form
           onSubmit={onSubmit}
           className="space-y-4"
           action="#"
           method="POST"
         >
+          {/** Email address */}
           <Box>
             <label
               htmlFor="email"
@@ -74,7 +91,9 @@ const signin = () => {
               />
             </Box>
           </Box>
+          {/** Email address */}
 
+          {/** Password */}
           <Box>
             <Box className="flex items-center justify-between">
               <label
@@ -83,14 +102,6 @@ const signin = () => {
               >
                 Password
               </label>
-              <Box className="text-sm">
-                <a
-                  href="#"
-                  className="font-semibold text-indigo-600 hover:text-indigo-500"
-                >
-                  Forgot password?
-                </a>
-              </Box>
             </Box>
             <Box className="mt-2">
               <input
@@ -105,7 +116,20 @@ const signin = () => {
               />
             </Box>
           </Box>
+          {/** Password */}
 
+          {/** Forgot password */}
+          {/* <Box className="text-sm">
+                  <a
+                    href="#"
+                    className="font-semibold text-indigo-600 hover:text-indigo-500"
+                  >
+                    Forgot password?
+                  </a>
+                </Box> */}
+          {/** Forgot password */}
+
+          {/** Button Submit */}
           <Box>
             <button
               type="submit"
@@ -114,8 +138,11 @@ const signin = () => {
               Sign in
             </button>
           </Box>
+          {/** Button Submit */}
         </form>
+        {/** Form đang nhập */}
 
+        {/** Link chuyển sang trang đăng ký */}
         <p className="mt-5 text-center text-sm text-gray-500">
           Not a member?{" "}
           <Link
@@ -125,6 +152,7 @@ const signin = () => {
             Create new account
           </Link>
         </p>
+        {/** Link chuyển sang trang đăng ký */}
       </Box>
     </Box>
   );

@@ -185,7 +185,7 @@ const DefaultLayout = () => {
                         alt=""
                       /> */}
                     </Box>
-                    <Box className="ml-3">
+                    <Box className="ml-3 space-y-1">
                       <Box className="text-base font-medium leading-none text-white">
                         {currentUser.name}
                       </Box>
