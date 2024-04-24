@@ -53,7 +53,8 @@ class AuthController extends Controller
         $user->currentAccessToken()->delete();
 
         return response([
-            'success' => true
+            'success' => true,
+            'massage' => "You have been successfully signed out"
         ]);
     }
 }
