@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Navigate, NavLink, Outlet } from "react-router-dom";
+import { Link, Navigate, NavLink, Outlet } from "react-router-dom";
 import { userStateContext } from "../contexts/ContextProvider";
 import axiosClient from "../axios";
 
@@ -18,7 +18,7 @@ const navigation = [
 //   // { name: "My Account", to: "#" },
 //   // { name: "Order Status", to: "#" },
 //   // { name: "Help & Contact", to: "#" },
-//   { name: "Sign out", href: "#" },
+//   { name: "Sign out", to: "#" },
 // ];
 
 function classNames(...classes) {
@@ -42,11 +42,424 @@ const DefaultLayout = () => {
   };
 
   return (
-    <>
+    <Box>
       <Box className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure
+          as="nav"
+          //  className="bg-gray-800"
+        >
           {({ open }) => (
             <Box>
+              <Box>
+                {/** Nav Link */}
+                <NavLink className="text-white navbar navbar-expand-lg navbar-light bg-light">
+                  <Box className="navbar-collapse">
+                    <ul className="navbar-nav mr-auto">
+                      <li className="nav-item dropdown px-2">
+                        <Link
+                          className="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          EN
+                        </Link>
+                        <Box
+                          className="dropdown-menu"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <Link className="dropdown-item" href="#">
+                            VN
+                          </Link>
+                        </Box>
+                      </li>
+                      <li className="nav-item dropdown px-2">
+                        <Link
+                          className="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          USD
+                        </Link>
+                        <Box
+                          className="dropdown-menu"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <Link className="dropdown-item" href="#">
+                            VND
+                          </Link>
+                        </Box>
+                      </li>
+                    </ul>
+                    <Box className="d-flex align-items-center">
+                      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item px-2">
+                          <Link className="nav-link" to="/hepl&contact">
+                            Help & Contact
+                          </Link>
+                        </li>
+                        <li className="nav-item px-2">
+                          <Link className="nav-link" to="/orderstatus">
+                            Order Status
+                          </Link>
+                        </li>
+                        <li className="nav-item px-2">
+                          <Link className="nav-link" to="/myaccount">
+                            My Account
+                          </Link>
+                        </li>
+                      </ul>
+                    </Box>
+                  </Box>
+                </NavLink>
+                {/** Nav Link */}
+
+                {/** Search Bar */}
+                <Box className="px-2">
+                  <form
+                    className="d-flex align-items-center"
+                    style={{ height: "4rem" }}
+                  >
+                    <Box className="container col-3">
+                      <h4>
+                        <strong>Media</strong>market
+                      </h4>
+                    </Box>
+                    <Box className="container pt-3">
+                      <Box className="input-group mb-3 border border-primary rounded">
+                        {/* <input type="text" className="form-control border-white" placeholder="Search for Products"
+                        aria-label="Search for Products" aria-describedby="basic-addon2"> */}
+                        <select
+                          className="custom-select border border-white col-3"
+                          id="inputGroupSelect02"
+                        >
+                          <option selected>All Categories</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <Box className="input-group-append">
+                          <button className="btn btn-primary" type="button">
+                            <i className="bi bi-search"></i>
+                          </button>
+                        </Box>
+                      </Box>
+                    </Box>
+                    <Box className="container col-3 d-flex justify-content-center">
+                      <Box>
+                        <Box style={{ position: "relative" }}>
+                          <Box>
+                            <i className="bi bi-arrow-left-right pr-4"></i>
+                            <Box
+                              className="position-absolute translate-middle badge rounded-circle bg-light"
+                              style={{
+                                color: "black",
+                                top: "12px",
+                                left: "8px",
+                                fontSize: "8px",
+                              }}
+                            >
+                              <span>0</span>
+                            </Box>
+                          </Box>
+                        </Box>
+                      </Box>
+                      <Box>
+                        <Box style={{ position: "relative" }}>
+                          <Box>
+                            <i className="bi bi-heart pr-4 "></i>
+                            <Box
+                              className="position-absolute translate-middle badge rounded-circle bg-light"
+                              style={{
+                                color: "black",
+                                top: "12px",
+                                left: "8px",
+                                fontSize: "8px",
+                              }}
+                            >
+                              <span>0</span>
+                            </Box>
+                          </Box>
+                        </Box>
+                      </Box>
+                      <Box>
+                        <Box style={{ position: "relative" }}>
+                          <Box>
+                            <i className="bi bi-bag pr-4"></i>
+                            <Box
+                              className="position-absolute translate-middle badge rounded-circle bg-danger"
+                              style={{
+                                color: "white",
+                                top: "12px",
+                                left: "8px",
+                                fontSize: "8px",
+                              }}
+                            >
+                              <span>2</span>
+                            </Box>
+                          </Box>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </form>
+                </Box>
+                {/** Search Bar */}
+
+                {/** Header */}
+                <Box className="px-2">
+                  <form className="d-flex align-items-center">
+                    {/** SHOP BY CATEGORY */}
+                    <Box className="btn-group container col-3">
+                      <Link to="/ShopByCategory">
+                        <button
+                          className="btn btn-primary text-left"
+                          type="button"
+                        >
+                          SHOP BY CATEGORY
+                        </button>
+                      </Link>
+                      <button
+                        type="button"
+                        className="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      ></button>
+                      <Box
+                        className="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <Link className="dropdown-item" to="/Action">
+                          Action
+                        </Link>
+                        <Link className="dropdown-item" to="/AnotherAction">
+                          Another action
+                        </Link>
+                        <Link className="dropdown-item" to="/SomethingElseHere">
+                          Something else here
+                        </Link>
+                      </Box>
+                    </Box>
+                    {/** SHOP BY CATEGORY */}
+
+                    <Box className="container d-flex align-item-left">
+                      {/** HOME */}
+                      <Box className="dropdown">
+                        <Link
+                          to="/HOME"
+                          className="btn btn-default dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <span>
+                            <strong>HOME</strong>
+                          </span>
+                        </Link>
+                        <Box
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <Link className="dropdown-item" to="/Action">
+                            Action
+                          </Link>
+                          <Link className="dropdown-item" to="/AnotherAction">
+                            Another action
+                          </Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/SomethingElseHere"
+                          >
+                            Something else here
+                          </Link>
+                        </Box>
+                      </Box>
+                      {/** HOME */}
+
+                      {/** SHOP */}
+                      <Box className="dropdown">
+                        <Link
+                          to="/SHOP"
+                          className="btn btn-default dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <span>
+                            <strong>SHOP</strong>
+                          </span>
+                        </Link>
+                        <Box
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <Link className="dropdown-item" to="/Action">
+                            Action
+                          </Link>
+                          <Link className="dropdown-item" to="/AnotherAction">
+                            Another action
+                          </Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/SomethingElseHere"
+                          >
+                            Something else here
+                          </Link>
+                        </Box>
+                      </Box>
+                      {/** SHOP */}
+
+                      {/** BLOG */}
+                      <Box className="dropdown">
+                        <Link
+                          to="/BLOG"
+                          className="btn btn-default dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <span>
+                            <strong>BLOG</strong>
+                          </span>
+                        </Link>
+                        <Box
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <Link className="dropdown-item" to="/Action">
+                            Action
+                          </Link>
+                          <Link className="dropdown-item" to="/AnotherAction">
+                            Another action
+                          </Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/SomethingElseHere"
+                          >
+                            Something else here
+                          </Link>
+                        </Box>
+                      </Box>
+                      {/** BLOG */}
+
+                      {/** PAGES */}
+                      <Box className="dropdown">
+                        <Link
+                          to="/PAGES"
+                          className="btn btn-default dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <span>
+                            <strong>PAGES</strong>
+                          </span>
+                        </Link>
+                        <Box
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <Link className="dropdown-item" to="/Action">
+                            Action
+                          </Link>
+                          <Link className="dropdown-item" to="/AnotherAction">
+                            Another action
+                          </Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/SomethingElseHere"
+                          >
+                            Something else here
+                          </Link>
+                        </Box>
+                      </Box>
+                      {/** PAGES */}
+
+                      {/** PRODUCT */}
+                      <Box>
+                        <Link to="/PRODUCT" className="btn btn-default">
+                          <span>
+                            <strong>PRODUCT</strong>
+                          </span>
+                        </Link>
+                      </Box>
+                      {/** PRODUCT */}
+
+                      {/** BRANDS */}
+                      <Box>
+                        <Link to="/BRANDS" className="btn btn-default">
+                          <span>
+                            <strong>BRANDS</strong>
+                          </span>
+                        </Link>
+                      </Box>
+                      {/** BRANDS */}
+
+                      {/** TODAY'S DEALS */}
+                      <Box>
+                        <Link
+                          to="/TODAY'SDEALS"
+                          className="btn btn-default text-left"
+                        >
+                          <span>
+                            <strong>TODAY'S DEALS</strong>
+                          </span>
+                        </Link>
+                      </Box>
+                      {/** TODAY'S DEALS */}
+
+                      {/** NEW ARIVALS */}
+                      <Box>
+                        <Link
+                          to="/NEW ARIVALS"
+                          className="btn btn-default text-left"
+                        >
+                          <span>
+                            <strong>NEW ARIVALS</strong>
+                          </span>
+                        </Link>
+                      </Box>
+                      {/** NEW ARIVALS */}
+                    </Box>
+
+                    <Box className="dropdown">
+                      <button
+                        className="btn btn-default dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i className="bi bi-three-dots-vertical"></i>
+                      </button>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <Link className="dropdown-item" to="#">
+                            Action
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="dropdown-item" to="#">
+                            Another action
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="dropdown-item" to="#">
+                            Something else here
+                          </Link>
+                        </li>
+                      </ul>
+                    </Box>
+                  </form>
+                </Box>
+                {/** Header */}
+              </Box>
+
               <Box className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Box className="flex h-16 items-center justify-between">
                   <Box className="flex items-center">
@@ -78,6 +491,7 @@ const DefaultLayout = () => {
                       </Box>
                     </Box>
                   </Box>
+
                   <Box className="hidden md:block">
                     <Box className="ml-4 flex items-center md:ml-6">
                       {/* Profile dropdown */}
@@ -233,7 +647,7 @@ const DefaultLayout = () => {
         </Disclosure>
         <Outlet />
       </Box>
-    </>
+    </Box>
   );
 };
 
