@@ -1,10 +1,11 @@
+import { Box } from "@mui/material";
 import PageComponent from "../components/PageComponent";
 
 const ProductsPage = () => {
   return (
-    <PageComponent title="Products">
-      Products
-    </PageComponent>
+    <Box>
+      <PageComponent title="Products">Products</PageComponent>
+    </Box>
   );
 };
 

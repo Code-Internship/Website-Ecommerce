@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, Navigate, NavLink, Outlet } from "react-router-dom";
@@ -10,16 +10,12 @@ const navigation = [
   { name: "HOME", to: "/" },
   { name: "SHOP", to: "/Shop" },
   { name: "BLOG", to: "/Blog" },
-  { name: "PRODUCTS", to: "/Products" },
+  { name: "PAGES", to: "/Pages" },
+  { name: "PRODUCT", to: "/Products" },
   { name: "BRANDS", to: "/Brands" },
+  { name: "TODAY'S DEALS", to: "/ToDaysDeals" },
+  { name: "NEW ARIVALS", to: "/NewArivals" },
 ];
-
-// const userNavigation = [
-//   // { name: "My Account", to: "#" },
-//   // { name: "Order Status", to: "#" },
-//   // { name: "Help & Contact", to: "#" },
-//   { name: "Sign out", to: "#" },
-// ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -28,6 +24,11 @@ function classNames(...classes) {
 const DefaultLayout = () => {
   const { currentUser, userToken, setCurrentUser, setUserToken } =
     userStateContext();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
   if (!userToken) {
     return <Navigate to="signin" />;
@@ -43,19 +44,17 @@ const DefaultLayout = () => {
 
   return (
     <Box>
-      <Box className="min-h-full">
-        <Disclosure
-          as="nav"
-          //  className="bg-gray-800"
-        >
+      <Box className="min-h-full max-w-full">
+        <Disclosure as="nav">
           {({ open }) => (
             <Box>
               <Box>
                 {/** Nav Link */}
-                <NavLink className="text-white navbar navbar-expand-lg navbar-light bg-light">
+                <NavLink className="text-dark navbar navbar-expand-lg navbar-light bg-light">
                   <Box className="navbar-collapse">
-                    <ul className="navbar-nav mr-auto">
-                      <li className="nav-item dropdown px-2">
+                    {/** nut ben phai */}
+                    <Box className="mr-auto d-flex align-items-center">
+                      <Box className="nav-item dropdown">
                         <Link
                           className="nav-link dropdown-toggle"
                           href="#"
@@ -75,8 +74,8 @@ const DefaultLayout = () => {
                             VN
                           </Link>
                         </Box>
-                      </li>
-                      <li className="nav-item dropdown px-2">
+                      </Box>
+                      <Box className="nav-item dropdown">
                         <Link
                           className="nav-link dropdown-toggle"
                           href="#"
@@ -96,27 +95,23 @@ const DefaultLayout = () => {
                             VND
                           </Link>
                         </Box>
-                      </li>
-                    </ul>
-                    <Box className="d-flex align-items-center">
-                      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item px-2">
-                          <Link className="nav-link" to="/hepl&contact">
-                            Help & Contact
-                          </Link>
-                        </li>
-                        <li className="nav-item px-2">
-                          <Link className="nav-link" to="/orderstatus">
-                            Order Status
-                          </Link>
-                        </li>
-                        <li className="nav-item px-2">
-                          <Link className="nav-link" to="/myaccount">
-                            My Account
-                          </Link>
-                        </li>
-                      </ul>
+                      </Box>
                     </Box>
+                    {/** nut ben phai */}
+
+                    {/** nut ben trai */}
+                    <Box className="d-flex align-items-center ml-auto">
+                      <Link className="nav-link" to="/hepl&contact">
+                        Help & Contact
+                      </Link>
+                      <Link className="nav-link" to="/orderstatus">
+                        Order Status
+                      </Link>
+                      <Link className="nav-link" to="/myaccount">
+                        My Account
+                      </Link>
+                    </Box>
+                    {/** nut ben trai */}
                   </Box>
                 </NavLink>
                 {/** Nav Link */}
@@ -127,15 +122,26 @@ const DefaultLayout = () => {
                     className="d-flex align-items-center"
                     style={{ height: "4rem" }}
                   >
+                    {/** Ten cua hang */}
                     <Box className="container col-3">
                       <h4>
                         <strong>Media</strong>market
                       </h4>
                     </Box>
+                    {/** Ten cua hang */}
+
+                    {/** Search */}
                     <Box className="container pt-3">
                       <Box className="input-group mb-3 border border-primary rounded">
-                        {/* <input type="text" className="form-control border-white" placeholder="Search for Products"
-                        aria-label="Search for Products" aria-describedby="basic-addon2"> */}
+                        <input
+                          type="text"
+                          className="form-control border-white"
+                          placeholder="Search for Products"
+                          aria-label="Search for Products"
+                          aria-describedby="basic-addon2"
+                          value={searchTerm}
+                          onChange={handleInputChange}
+                        />
                         <select
                           className="custom-select border border-white col-3"
                           id="inputGroupSelect02"
@@ -152,7 +158,10 @@ const DefaultLayout = () => {
                         </Box>
                       </Box>
                     </Box>
+                    {/** Search */}
+
                     <Box className="container col-3 d-flex justify-content-center">
+                      {/** icon mui ten*/}
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
@@ -171,6 +180,9 @@ const DefaultLayout = () => {
                           </Box>
                         </Box>
                       </Box>
+                      {/** icon mui ten*/}
+
+                      {/** icon tim "thich san pham" */}
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
@@ -189,6 +201,9 @@ const DefaultLayout = () => {
                           </Box>
                         </Box>
                       </Box>
+                      {/** icon tim "thich san pham" */}
+
+                      {/** icon gio hang */}
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
@@ -207,6 +222,7 @@ const DefaultLayout = () => {
                           </Box>
                         </Box>
                       </Box>
+                      {/** icon gio hang */}
                     </Box>
                   </form>
                 </Box>
@@ -225,12 +241,12 @@ const DefaultLayout = () => {
                           SHOP BY CATEGORY
                         </button>
                       </Link>
-                      <button
+                      <Box
                         type="button"
                         className="btn btn-primary dropdown-toggle dropdown-toggle-split"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
-                      ></button>
+                      ></Box>
                       <Box
                         className="dropdown-menu"
                         aria-labelledby="dropdownMenuButton"
@@ -248,219 +264,82 @@ const DefaultLayout = () => {
                     </Box>
                     {/** SHOP BY CATEGORY */}
 
-                    <Box className="container d-flex align-item-left">
-                      {/** HOME */}
-                      <Box className="dropdown">
-                        <Link
-                          to="/HOME"
-                          className="btn btn-default dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <span>
-                            <strong>HOME</strong>
-                          </span>
-                        </Link>
-                        <Box
-                          className="dropdown-menu"
-                          aria-labelledby="dropdownMenuButton"
-                        >
-                          <Link className="dropdown-item" to="/Action">
-                            Action
-                          </Link>
-                          <Link className="dropdown-item" to="/AnotherAction">
-                            Another action
-                          </Link>
-                          <Link
-                            className="dropdown-item"
-                            to="/SomethingElseHere"
-                          >
-                            Something else here
-                          </Link>
+                    {/* Sort By Dropdown */}
+                    <Box className="container d-flex align-item-left px-3 py-2">
+                      <Box className="hidden md:block">
+                        <Box className="ml-10 flex align-items-baseline space-x-4">
+                          {navigation.map((items) => (
+                            <NavLink
+                              key={items.name}
+                              to={items.to}
+                              className={({ isActive }) =>
+                                classNames(
+                                  isActive
+                                    ? "hover:btn btn-default "
+                                    : "hover:btn btn-default ",
+                                  "rounded-md text-sm font-medium"
+                                )
+                              }
+                            >
+                              <span>
+                                <strong>{items.name}</strong>
+                              </span>
+                              <Box
+                                type="button"
+                                className="btn dropdown-toggle dropdown-toggle-split"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              ></Box>
+                              <Box
+                                className="dropdown-menu"
+                                aria-labelledby="dropdownMenuButton"
+                              >
+                                <Link className="dropdown-item" to="/Action">
+                                  Action
+                                </Link>
+                                <Link
+                                  className="dropdown-item"
+                                  to="/AnotherAction"
+                                >
+                                  Another action
+                                </Link>
+                                <Link
+                                  className="dropdown-item"
+                                  to="/SomethingElseHere"
+                                >
+                                  Something else here
+                                </Link>
+                              </Box>
+                            </NavLink>
+                          ))}
                         </Box>
                       </Box>
-                      {/** HOME */}
-
-                      {/** SHOP */}
-                      <Box className="dropdown">
-                        <Link
-                          to="/SHOP"
-                          className="btn btn-default dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <span>
-                            <strong>SHOP</strong>
-                          </span>
-                        </Link>
-                        <Box
-                          className="dropdown-menu"
-                          aria-labelledby="dropdownMenuButton"
-                        >
-                          <Link className="dropdown-item" to="/Action">
-                            Action
-                          </Link>
-                          <Link className="dropdown-item" to="/AnotherAction">
-                            Another action
-                          </Link>
-                          <Link
-                            className="dropdown-item"
-                            to="/SomethingElseHere"
-                          >
-                            Something else here
-                          </Link>
-                        </Box>
-                      </Box>
-                      {/** SHOP */}
-
-                      {/** BLOG */}
-                      <Box className="dropdown">
-                        <Link
-                          to="/BLOG"
-                          className="btn btn-default dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <span>
-                            <strong>BLOG</strong>
-                          </span>
-                        </Link>
-                        <Box
-                          className="dropdown-menu"
-                          aria-labelledby="dropdownMenuButton"
-                        >
-                          <Link className="dropdown-item" to="/Action">
-                            Action
-                          </Link>
-                          <Link className="dropdown-item" to="/AnotherAction">
-                            Another action
-                          </Link>
-                          <Link
-                            className="dropdown-item"
-                            to="/SomethingElseHere"
-                          >
-                            Something else here
-                          </Link>
-                        </Box>
-                      </Box>
-                      {/** BLOG */}
-
-                      {/** PAGES */}
-                      <Box className="dropdown">
-                        <Link
-                          to="/PAGES"
-                          className="btn btn-default dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <span>
-                            <strong>PAGES</strong>
-                          </span>
-                        </Link>
-                        <Box
-                          className="dropdown-menu"
-                          aria-labelledby="dropdownMenuButton"
-                        >
-                          <Link className="dropdown-item" to="/Action">
-                            Action
-                          </Link>
-                          <Link className="dropdown-item" to="/AnotherAction">
-                            Another action
-                          </Link>
-                          <Link
-                            className="dropdown-item"
-                            to="/SomethingElseHere"
-                          >
-                            Something else here
-                          </Link>
-                        </Box>
-                      </Box>
-                      {/** PAGES */}
-
-                      {/** PRODUCT */}
-                      <Box>
-                        <Link to="/PRODUCT" className="btn btn-default">
-                          <span>
-                            <strong>PRODUCT</strong>
-                          </span>
-                        </Link>
-                      </Box>
-                      {/** PRODUCT */}
-
-                      {/** BRANDS */}
-                      <Box>
-                        <Link to="/BRANDS" className="btn btn-default">
-                          <span>
-                            <strong>BRANDS</strong>
-                          </span>
-                        </Link>
-                      </Box>
-                      {/** BRANDS */}
-
-                      {/** TODAY'S DEALS */}
-                      <Box>
-                        <Link
-                          to="/TODAY'SDEALS"
-                          className="btn btn-default text-left"
-                        >
-                          <span>
-                            <strong>TODAY'S DEALS</strong>
-                          </span>
-                        </Link>
-                      </Box>
-                      {/** TODAY'S DEALS */}
-
-                      {/** NEW ARIVALS */}
-                      <Box>
-                        <Link
-                          to="/NEW ARIVALS"
-                          className="btn btn-default text-left"
-                        >
-                          <span>
-                            <strong>NEW ARIVALS</strong>
-                          </span>
-                        </Link>
-                      </Box>
-                      {/** NEW ARIVALS */}
                     </Box>
-
-                    <Box className="dropdown">
-                      <button
-                        className="btn btn-default dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <i className="bi bi-three-dots-vertical"></i>
-                      </button>
-                      <ul className="dropdown-menu">
-                        <li>
-                          <Link className="dropdown-item" to="#">
-                            Action
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="dropdown-item" to="#">
-                            Another action
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="dropdown-item" to="#">
-                            Something else here
-                          </Link>
-                        </li>
-                      </ul>
+                    {/* Sort By Dropdown */}
+                    <Box className="-mr-2 flex md:hidden col">
+                      {/* Mobile menu button */}
+                      <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span className="absolute -inset-0.5" />
+                        <span className="sr-only">Open main menu</span>
+                        {open ? (
+                          <XMarkIcon
+                            className="block h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        ) : (
+                          <Bars3Icon
+                            className="block h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        )}
+                      </Disclosure.Button>
                     </Box>
                   </form>
                 </Box>
                 {/** Header */}
               </Box>
 
-              <Box className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              {/* <Box className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Box className="flex h-16 items-center justify-between">
                   <Box className="flex items-center">
                     <Box className="flex-shrink-0">
@@ -494,18 +373,12 @@ const DefaultLayout = () => {
 
                   <Box className="hidden md:block">
                     <Box className="ml-4 flex items-center md:ml-6">
-                      {/* Profile dropdown */}
                       <Menu as="Box" className="relative ml-3">
                         <Box>
                           <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="absolute -inset-1.5" />
                             <span className="sr-only">Open user menu</span>
                             <UserIcon className="w-10 h-10 text-white bg-black/25 p-2 rounded-full" />
-                            {/* <img
-                              className="h-8 w-8 rounded-full"
-                              src={user.imageUrl}
-                              alt=""
-                            /> */}
                           </Menu.Button>
                         </Box>
                         <Transition
@@ -569,8 +442,8 @@ const DefaultLayout = () => {
                       </Menu>
                     </Box>
                   </Box>
+
                   <Box className="-mr-2 flex md:hidden">
-                    {/* Mobile menu button */}
                     <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
@@ -588,8 +461,9 @@ const DefaultLayout = () => {
                     </Disclosure.Button>
                   </Box>
                 </Box>
-              </Box>
+              </Box> */}
 
+              {/** Open main menu */}
               <Disclosure.Panel className="md:hidden">
                 <Box className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                   {navigation.map((item) => (
@@ -613,11 +487,6 @@ const DefaultLayout = () => {
                   <Box className="flex items-center px-5">
                     <Box className="flex-shrink-0">
                       <UserIcon className="w-10 h-10 text-white bg-black/25 p-2 rounded-full" />
-                      {/* <img
-                        className="h-10 w-10 rounded-full"
-                        src={currentUser.imageUrl}
-                        alt=""
-                      /> */}
                     </Box>
                     <Box className="ml-3 space-y-1">
                       <Box className="text-base font-medium leading-none text-white">
@@ -642,6 +511,7 @@ const DefaultLayout = () => {
                   </Box>
                 </Box>
               </Disclosure.Panel>
+              {/** Open main menu */}
             </Box>
           )}
         </Disclosure>

@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
 import PageComponent from "../components/PageComponent";
 
-const ShopPage = () => {
+const PagesPage = () => {
   return (
     <Box>
-      <PageComponent title="Shop">Shop</PageComponent>
+      <PageComponent title="Pages">Pages</PageComponent>;
     </Box>
   );
 };
 
-export default ShopPage;
+export default PagesPage;

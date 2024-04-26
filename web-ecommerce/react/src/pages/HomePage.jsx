@@ -1,9 +1,12 @@
+import { Box } from "@mui/material";
 import PageComponent from "../components/PageComponent";
 
 const homepage = () => {
-  return <PageComponent title="Home">
-    Home
-  </PageComponent>;
+  return (
+    <Box>
+      <PageComponent title="Home">Home</PageComponent>
+    </Box>
+  );
 };
 
 export default homepage;

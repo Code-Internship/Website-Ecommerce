@@ -9,6 +9,9 @@ import BlogPage from "../pages/BlogPage.jsx";
 import ProductsPage from "../pages/ProductsPage.jsx";
 import BrandsPage from "../pages/BrandsPage.jsx";
 import NotFound from "../pages/NotFound.jsx";
+import PagesPage from "../pages/PagesPage.jsx";
+import ToDaysDealsPage from "../pages/ToDaysDealsPage.jsx";
+import NewArivalsPage from "../pages/NewArivalsPage.jsx";
 
 /**
  * router is an object that defines the routes for the application.
@@ -35,12 +38,24 @@ const router = createBrowserRouter([
         element: <BlogPage />,
       },
       {
+        path: "/Pages",
+        element: <PagesPage />,
+      },
+      {
         path: "/Products",
         element: <ProductsPage />,
       },
       {
         path: "/Brands",
         element: <BrandsPage />,
+      },
+      {
+        path: "/ToDaysDeals",
+        element: <ToDaysDealsPage />,
+      },
+      {
+        path: "/NewArivals",
+        element: <NewArivalsPage />,
       },
     ],
   },
