@@ -265,9 +265,9 @@ const DefaultLayout = () => {
                     {/** SHOP BY CATEGORY */}
 
                     {/* Sort By Dropdown */}
-                    <Box className="container d-flex align-item-left px-3 py-2">
+                    <Box className="container d-flex align-item-left px-1 py-1">
                       <Box className="hidden md:block">
-                        <Box className="ml-10 flex align-items-baseline space-x-4">
+                        <Box className="ml-10 flex align-items-baseline space-x-1">
                           {navigation.map((items) => (
                             <NavLink
                               key={items.name}
@@ -316,6 +316,51 @@ const DefaultLayout = () => {
                       </Box>
                     </Box>
                     {/* Sort By Dropdown */}
+
+                    {/** Logo USER */}
+                    <Box className="hidden md:block">
+                      <Box className="ml-4 flex items-center md:ml-6 col-1">
+                        <Menu as="Box" className="relative ml-3">
+                          <Box>
+                            <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                              <span className="absolute -inset-1.5" />
+                              <span className="sr-only">Open user menu</span>
+                              <UserIcon className="w-10 h-10 text-white bg-black/25 p-2 rounded-full" />
+                            </Menu.Button>
+                          </Box>
+                          <Transition
+                            as={Fragment}
+                            enter="transition ease-out duration-100"
+                            enterFrom="transform opacity-0 scale-95"
+                            enterTo="transform opacity-100 scale-100"
+                            leave="transition ease-in duration-75"
+                            leaveFrom="transform opacity-100 scale-100"
+                            leaveTo="transform opacity-0 scale-95"
+                          >
+                            <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                              <Menu.Item>
+                                <NavLink
+                                  to="/signout"
+                                  onClick={(ev) => signout(ev)}
+                                  className={({ isActive }) =>
+                                    classNames(
+                                      isActive
+                                        ? "block bg-gray-900 text-white"
+                                        : "block text-gray-700 hover:bg-gray-700 hover:text-white",
+                                      "block rounded-md px-3 py-2 text-sm font-medium"
+                                    )
+                                  }
+                                >
+                                  Sign out
+                                </NavLink>
+                              </Menu.Item>
+                            </Menu.Items>
+                          </Transition>
+                        </Menu>
+                      </Box>
+                    </Box>
+                    {/** Logo USER */}
+
                     <Box className="-mr-2 flex md:hidden col">
                       {/* Mobile menu button */}
                       <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -339,147 +384,45 @@ const DefaultLayout = () => {
                 {/** Header */}
               </Box>
 
-              {/* <Box className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <Box className="flex h-16 items-center justify-between">
-                  <Box className="flex items-center">
-                    <Box className="flex-shrink-0">
-                      <img
-                        className="h-8 w-8"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                        alt="Your Company"
-                      />
-                    </Box>
-                    <Box className="hidden md:block">
-                      <Box className="ml-10 flex items-baseline space-x-4">
-                        {navigation.map((item) => (
-                          <NavLink
-                            key={item.name}
-                            to={item.to}
-                            className={({ isActive }) =>
-                              classNames(
-                                isActive
-                                  ? "bg-gray-900 text-white"
-                                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                "rounded-md px-3 py-2 text-sm font-medium"
-                              )
-                            }
-                          >
-                            {item.name}
-                          </NavLink>
-                        ))}
-                      </Box>
-                    </Box>
-                  </Box>
-
-                  <Box className="hidden md:block">
-                    <Box className="ml-4 flex items-center md:ml-6">
-                      <Menu as="Box" className="relative ml-3">
-                        <Box>
-                          <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                            <span className="absolute -inset-1.5" />
-                            <span className="sr-only">Open user menu</span>
-                            <UserIcon className="w-10 h-10 text-white bg-black/25 p-2 rounded-full" />
-                          </Menu.Button>
-                        </Box>
-                        <Transition
-                          as={Fragment}
-                          enter="transition ease-out duration-100"
-                          enterFrom="transform opacity-0 scale-95"
-                          enterTo="transform opacity-100 scale-100"
-                          leave="transition ease-in duration-75"
-                          leaveFrom="transform opacity-100 scale-100"
-                          leaveTo="transform opacity-0 scale-95"
-                        >
-                          <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            <Menu.Item>
-                              <NavLink
-                                to="/myaccount"
-                                className={({ isActive }) =>
-                                  classNames(
-                                    isActive
-                                      ? "block bg-gray-900 text-white"
-                                      : "block text-gray-700 hover:bg-gray-700 hover:text-white",
-                                    "block rounded-md px-3 py-2 text-sm font-medium"
-                                  )
-                                }
-                              >
-                                My Account
-                              </NavLink>
-                            </Menu.Item>
-                            <Menu.Item>
-                              <NavLink
-                                to="/orderstatus"
-                                className={({ isActive }) =>
-                                  classNames(
-                                    isActive
-                                      ? "block bg-gray-900 text-white"
-                                      : "block text-gray-700 hover:bg-gray-700 hover:text-white",
-                                    "block rounded-md px-3 py-2 text-sm font-medium"
-                                  )
-                                }
-                              >
-                                Order Status
-                              </NavLink>
-                            </Menu.Item>
-                            <Menu.Item>
-                              <NavLink
-                                to="/signout"
-                                onClick={(ev) => signout(ev)}
-                                className={({ isActive }) =>
-                                  classNames(
-                                    isActive
-                                      ? "block bg-gray-900 text-white"
-                                      : "block text-gray-700 hover:bg-gray-700 hover:text-white",
-                                    "block rounded-md px-3 py-2 text-sm font-medium"
-                                  )
-                                }
-                              >
-                                Sign out
-                              </NavLink>
-                            </Menu.Item>
-                          </Menu.Items>
-                        </Transition>
-                      </Menu>
-                    </Box>
-                  </Box>
-
-                  <Box className="-mr-2 flex md:hidden">
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span className="absolute -inset-0.5" />
-                      <span className="sr-only">Open main menu</span>
-                      {open ? (
-                        <XMarkIcon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <Bars3Icon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      )}
-                    </Disclosure.Button>
-                  </Box>
-                </Box>
-              </Box> */}
-
               {/** Open main menu */}
               <Disclosure.Panel className="md:hidden">
                 <Box className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                  {navigation.map((item) => (
+                  {navigation.map((items) => (
                     <NavLink
-                      key={item.name}
-                      to={item.to}
+                      key={items.name}
+                      to={items.to}
                       className={({ isActive }) =>
                         classNames(
                           isActive
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                            ? "hover:bg-gray-100 text-dark"
+                            : "text-gray-300 hover:bg-gray-100 hover:text-dark",
                           "block rounded-md px-3 py-2 text-base font-medium"
                         )
                       }
                     >
-                      {item.name}
+                      <span>
+                        <strong>{items.name}</strong>
+                      </span>
+                      <Box
+                        type="button"
+                        className="btn dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      ></Box>
+                      <Box
+                        className="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <Link className="dropdown-item" to="/Action">
+                          Action
+                        </Link>
+                        <Link className="dropdown-item" to="/AnotherAction">
+                          Another action
+                        </Link>
+                        <Link className="dropdown-item" to="/SomethingElseHere">
+                          Something else here
+                        </Link>
+                      </Box>
                     </NavLink>
                   ))}
                 </Box>
@@ -503,7 +446,7 @@ const DefaultLayout = () => {
                       to="/signout"
                       onClick={(ev) => signout(ev)}
                       className={
-                        "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                        "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-100 hover:text-dark"
                       }
                     >
                       Sign out
