@@ -432,7 +432,7 @@ const DefaultLayout = () => {
                       <UserIcon className="w-10 h-10 text-white bg-black/25 p-2 rounded-full" />
                     </Box>
                     <Box className="ml-3 space-y-1">
-                      <Box className="text-base font-medium leading-none text-white">
+                      <Box className="text-base font-medium leading-none text-gray-400">
                         {currentUser.name}
                       </Box>
                       <Box className="text-sm font-medium leading-none text-gray-400">

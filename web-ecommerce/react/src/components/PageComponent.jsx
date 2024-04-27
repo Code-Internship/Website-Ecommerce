@@ -12,7 +12,7 @@ const PageComponent = ({ title, buttons = "", children }) => {
         </Box>
       </header>
       <main>
-        <Box className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{children}</Box>
+        <Box className="mx-auto max-w px-3">{children}</Box>
       </main>
     </Box>
   );

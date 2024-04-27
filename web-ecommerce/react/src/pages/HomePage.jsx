@@ -1,10 +1,13 @@
 import { Box } from "@mui/material";
 import PageComponent from "../components/PageComponent";
+import BannerPage from "../components/BannerPage";
 
 const homepage = () => {
   return (
     <Box>
-      <PageComponent title="Home">Home</PageComponent>
+      <PageComponent title="Home">
+        <BannerPage />
+      </PageComponent>
     </Box>
   );
 };
