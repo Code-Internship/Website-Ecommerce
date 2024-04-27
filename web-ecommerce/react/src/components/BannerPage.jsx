@@ -42,7 +42,7 @@ const BannerPage = () => {
               <Box>
                 <Link to="/DiscoverNow" className="group relative block">
                   <img
-                    src="https://www.bing.com/images/blob?bcid=r0bI.rnh2PUGKQ"
+                    src="https://i0.wp.com/dronedj.com/wp-content/uploads/sites/2/2020/01/Sunflower-Labs-security-drone.jpg?resize=1200,628&ssl=1"
                     alt=""
                     className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
                     style={{ aspectRatio: "16 / 9" }}
@@ -59,7 +59,7 @@ const BannerPage = () => {
               <Box>
                 <Link to="/DiscoverNow" className="group relative block">
                   <img
-                    src="https://www.bing.com/images/blob?bcid=r-f3AMqWq.UGeA"
+                    src="https://media.wired.com/photos/5f7e4efc340398e14d15b3c0/191:100/w_1280,c_limit/Gear-OM4-5.jpg?mbid=social_retweet"
                     alt=""
                     className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
                     style={{ aspectRatio: "16 / 9" }}
@@ -76,7 +76,7 @@ const BannerPage = () => {
               <Box>
                 <Link to="/DiscoverNow" className="group relative block">
                   <img
-                    src="https://www.bing.com/images/blob?bcid=rzE4cQSsCvUGrA"
+                    src="https://cdn.shopify.com/s/files/1/0553/0419/2034/files/Primary_-_Pillow_172b4716-8f5f-4220-a9a3-4d625d08e69a.jpg?v=1678993367"
                     alt=""
                     className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
                     style={{ aspectRatio: "16 / 9" }}
