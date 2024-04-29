@@ -94,6 +94,81 @@ const BannerPage = () => {
         </section>
       </Box>
       {/** Banner phu */}
+
+      {/** Banner phu 1 - Ngoc*/}
+      <Box>
+        <section>
+          <Box className="mx-auto px-3 py-3">
+            <Box className="mt-3 grid grid-cols-1 gap-4 lg:grid-cols-6">
+              <Box>
+                <Link to="/DiscoverNow" className="block h-full">
+                  <Box component="span" fontSize="3xl" fontWeight="bold" color="black">
+                    2024's Best Selling Products
+                  </Box>
+                </Link>
+              </Box>
+
+              <Box>
+                <Link to="/DiscoverNow" className="group relative block">
+                  <img
+                    src="https://i.guim.co.uk/img/media/abef140b67ba87dd7dfbd528206c880b6d659736/0_102_3600_2160/master/3600.jpg?width=1300&dpr=2&s=none"
+                    alt=""
+                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                    style={{ aspectRatio: "4 / 3" }}
+                  />
+                </Link>
+              </Box>
+
+              <Box>
+                <Link to="/DiscoverNow" className="group relative block">
+                  <img
+                    src="https://huylananhaudio.vn/media/lib/1710_TiviSamsungLEDUA65MU8000K-6.jpg"
+                    alt=""
+                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                    style={{ aspectRatio: "4 / 3" }}
+                  />
+                </Link>
+              </Box>
+
+              <Box>
+                <Link to="/DiscoverNow" className="group relative block">
+                  <img
+                    src="https://phukienflytech.vn/wp-content/uploads/2021/02/11.jpg"
+                    alt=""
+                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                    style={{ aspectRatio: "4 / 3" }}
+                  />
+                </Link>
+              </Box>
+
+              <Box>
+                <Link to="/DiscoverNow" className="group relative block">
+                  <img
+                    src="https://www.techone.vn/wp-content/uploads/2023/05/d_2.webp"
+                    alt=""
+                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                    style={{ aspectRatio: "4 / 3" }}
+                  />
+                </Link>
+              </Box>
+
+              <Box>
+                <Link to="/DiscoverNow" className="group relative block">
+                  <img
+                    src="https://www.stonegroup.co.uk/media/catalog/product/cache/8e482c6f1356532ccb53b80dfbe0f6ff/C/7/C7100A27-74A3-4651-8ED9-9DD9FC35201B.jpg"
+                    alt=""
+                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                    style={{ aspectRatio: "4 / 3" }}
+                  />
+                </Link>
+              </Box>
+            </Box>
+          </Box>
+        </section>
+      </Box>
+      {/** Banner phu 1 - Ngoc*/}
+
+      
     </Box>
   );
 };
