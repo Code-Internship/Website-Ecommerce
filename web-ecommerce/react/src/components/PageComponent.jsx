@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import FooterPage from "./FooterPage";
 
 const PageComponent = ({ title, buttons = "", children }) => {
   return (
@@ -14,6 +15,7 @@ const PageComponent = ({ title, buttons = "", children }) => {
       <main>
         <Box className="mx-auto max-w px-3">{children}</Box>
       </main>
+      <FooterPage />
     </Box>
   );
 };

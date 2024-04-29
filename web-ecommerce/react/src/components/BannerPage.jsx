@@ -103,7 +103,7 @@ const BannerPage = () => {
               <Box>
                 <Link to="/DiscoverNow" className="block h-full">
                   <Box component="span" fontSize="3xl" fontWeight="bold" color="black">
-                    2024's Best Selling Products
+                    2024{'\''}s Best Selling Products
                   </Box>
                 </Link>
               </Box>
@@ -168,7 +168,7 @@ const BannerPage = () => {
       </Box>
       {/** Banner phu 1 - Ngoc*/}
 
-      
+
     </Box>
   );
 };

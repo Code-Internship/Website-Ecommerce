@@ -36,6 +36,7 @@ const DefaultLayout = () => {
 
   const signout = (ev) => {
     ev.preventDefault();
+    // eslint-disable-next-line no-unused-vars
     axiosClient.post("/signout").then((res) => {
       setCurrentUser({});
       setUserToken(null);
@@ -124,9 +125,9 @@ const DefaultLayout = () => {
                   >
                     {/** Ten cua hang */}
                     <Box className="container col-3">
-                      <h4>
+                      <Link to="/" className="text-dark text-decoration-none">
                         <strong>Media</strong>market
-                      </h4>
+                      </Link>
                     </Box>
                     {/** Ten cua hang */}
 
