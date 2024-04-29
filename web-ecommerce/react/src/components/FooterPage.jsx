@@ -21,7 +21,6 @@ const FooterPage = () => {
               </Box>
               <Box>
                 <BeakerIcon className="h-6 w-6 text-blue-500" />
-                <FacebookIcon
               </Box>
               <ul className="mt-8 flex gap-4">
                 <li>
