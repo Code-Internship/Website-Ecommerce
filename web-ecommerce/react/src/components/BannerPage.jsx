@@ -371,6 +371,9 @@ const BannerPage = () => {
                       className="aspect-square w-full object-scale-down transition duration-500 group-hover:opacity-90"
                       style={{ aspectRatio: "4 / 3" }}
                     />
+                    <Box className="absolute top-3 right-5 bg-yellow-400 text-black font-bold px-2 square-full">
+                      -35%
+                    </Box>
                     <Box className="mt-4 text-center mb-3">
                       <Box className="mt-4">
                         <Box className="inline-block">
@@ -411,6 +414,9 @@ const BannerPage = () => {
                       className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
                       style={{ aspectRatio: "4 / 3" }}
                     />
+                    <Box className="absolute top-3 right-5 bg-red-500 text-white font-bold px-2 square-full">
+                      Hot
+                    </Box>
                     <Box className="mt-4 text-center mb-3">
                       <Box className="mt-4">
                         <Box className="inline-block">
