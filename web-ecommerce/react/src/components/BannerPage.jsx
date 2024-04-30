@@ -197,8 +197,245 @@ const BannerPage = () => {
         </Box>
       </Box>
       {/** Banner phu 1 - Ngoc*/}
+
+      {/** Banner phu 2 - Ngoc*/}
+      <Box className="mx-auto px-3 py-3">
+        <Box className="mt-3 mb-3 grid grid-cols-1 gap-2 lg:grid-cols-12">
+          {/** ô đầu tiên Deals of the month*/}
+          <Box className="lg:col-span-4" style={{ border: '2px solid #32CD32', boxShadow: '0 0 5px green' }}>
+            <Box className="px-4">
+              <Box className="relative">
+                <Box className="mt-2 mb-2 text-center text-xl">
+                  <Box className="inline-block">
+                    <Box className="font-bold">Deals</Box>
+                  </Box>
+                  <Box className="inline-block ml-2">
+                    <Box>of the month</Box>
+                  </Box>
+                </Box>
+                <hr/>
+                <img 
+                  src="https://images.ctfassets.net/a3qyhfznts9y/1jn5oYLXGLx2cJuiK9TAyI/7cc3df75b85ba3af685b93bea0ca87d5/3x2-ecobee3lite-AngleFront-US_3x.png?w=1366&h=911&q=80&fm=webp" 
+                  alt="" 
+                  className="w-full object-cover rounded-full" 
+                  style={{ aspectRatio: "4 / 3" }} 
+                />
+                <Box className="absolute top-12 right-12 bg-green-500 text-white px-4 py-4 rounded-full">
+                  SAVE<br/>$99.00
+                </Box>
+
+                <Box className="mt-4 text-center mb-3">
+                  <Box className="mt-4">
+                    <Box className="inline-block">
+                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$169.95</Box>
+                    </Box>
+                    <Box className="inline-block ml-2">
+                      <Box className="text-gray-500 line-through">$269.00</Box>
+                    </Box>
+                  </Box>
+                  <Box className="mt-2 text-lg">ecobee3 lite Smart Thermostat</Box>
+                </Box>
+              </Box>
+              <hr/>
+              <Box className="mt-4 p-2 rounded text-center text-xl">
+                <Box className="uppercase font-bold">Hurry Up!</Box>
+                <Box>Offer Ends In:</Box>
+                <Box className="mt-3 mr-5 ml-5 grid grid-cols-4 text-center">
+                  <Box>
+                    <Box className="flex items-center justify-center">
+                      <Box className="bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center">
+                        <Box className="text-xl font-bold">3</Box>
+                      </Box>
+                    </Box>
+                    <Box className="text-xs font-bold">DAYS</Box>
+                  </Box>
+
+                  <Box>
+                    <Box className="flex items-center justify-center">
+                      <Box className="bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center">
+                        <Box className="text-xl font-bold">12</Box>
+                      </Box>
+                    </Box>
+                    <Box className="text-xs font-bold">HOURS</Box>
+                  </Box>
+
+                  <Box>
+                    <Box className="flex items-center justify-center">
+                      <Box className="bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center">
+                        <Box className="text-xl font-bold">37</Box>
+                      </Box>
+                    </Box>
+                    <Box className="text-xs font-bold">MINS</Box>
+                  </Box>
+                  
+                  <Box>
+                    <Box className="flex items-center justify-center">
+                      <Box className="bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center">
+                        <Box className="text-xl font-bold">28</Box>
+                      </Box>
+                    </Box>
+                    <Box className="text-xs font-bold">SECS</Box>
+                  </Box>
+                  
+                </Box> 
+              </Box>
+            </Box>
+          </Box>
+          {/** ô đầu tiên Deals of the month*/}
+
+          {/** 6 ô sản phẩm còn lại*/}
+          <Box className="lg:col-span-8">
+            <Box className="px-3">
+              <Box className="mt-2 mb-2 text-left text-xl">
+                <Box className="inline-block">
+                  <Box className="font-bold" style={{ color: 'red' }}>New Arrivals</Box>
+                </Box>
+                <Box className="inline-block ml-5">
+                  On Sale
+                </Box>
+                <Box className="inline-block ml-5">
+                  Best Rated
+                </Box>
+                <Box className="inline-block ml-5">
+                  Popular Products
+                </Box>
+              </Box>
+              <hr/>
+
+              <Box className="grid grid-cols-3 gap-2 mt-2">
+                <Box>
+                  <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                    <img
+                      src="https://www.backmarket.com/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D260/https://d2e6ccujb3mkqf.cloudfront.net/c25b4545-ed00-4933-ab01-a55114f549a1-2_3d8cb8ce-be26-49c2-8073-e14dbe22585e.jpg"
+                      alt=""
+                      className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                      style={{ aspectRatio: "4 / 3" }}
+                    />
+                    <Box className="mt-4 text-center mb-3">
+                      <Box className="mt-4">
+                        <Box className="inline-block">
+                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$299.95</Box>
+                        </Box>
+                      </Box>
+                      <Box>Beats Solo3 Wireless</Box>
+                      <Box>On-Ear Headphones</Box> 
+                    </Box>
+                  </Link>
+                </Box>
+
+                <Box>
+                  <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                    <img
+                      src="https://techlandaudio.com.vn/wp-content/uploads/2021/02/loa-bluetooth-devialet-phantom-1-108-db-gold_2-1.jpg"
+                      alt=""
+                      className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                      style={{ aspectRatio: "4 / 3" }}
+                    />
+                    <Box className="mt-4 text-center mb-3">
+                      <Box className="mt-4">
+                        <Box className="inline-block">
+                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$2 989.95</Box>
+                        </Box>
+                      </Box>
+                      <Box>Devialet Gold Phantom</Box>
+                      <Box>Wireless Speaker</Box> 
+                    </Box>
+                  </Link>
+                </Box>
+
+                <Box>
+                  <Link to="/DiscoverNow" className="group relative block">
+                    <img 
+                      src="https://media.pricebook.co.id/images/product/L/69468_L_1.jpg"
+                      alt=""
+                      className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
+                      style={{ aspectRatio: "4 / 3" }}
+                    />
+                    <Box className="mt-4 text-center mb-3">
+                      <Box className="mt-4">
+                        <Box className="inline-block">
+                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$369.00</Box>
+                        </Box>
+                      </Box>
+                      <Box>Apple Watch Nike+</Box>
+                      <Box>With Sport Band</Box> 
+                    </Box>
+                  </Link>
+                </Box>
+
+                <Box>
+                  <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                    <img
+                      src="https://fr.mathworks.com/help/simulink/supportpkg/parrot_ug/parrot_mambo_stabilized.png"
+                      alt=""
+                      className="aspect-square w-full object-scale-down transition duration-500 group-hover:opacity-90"
+                      style={{ aspectRatio: "4 / 3" }}
+                    />
+                    <Box className="mt-4 text-center mb-3">
+                      <Box className="mt-4">
+                        <Box className="inline-block">
+                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$109.95</Box>
+                        </Box>
+                      </Box>
+                      <Box>Parrot Mambo</Box>
+                      <Box>MiniDrone</Box> 
+                    </Box>
+                  </Link>
+                </Box>
+
+                <Box>
+                  <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                    <img
+                      src="https://static.bhphoto.com/images/multiple_images/images500x500/1475971300_IMG_695070.jpg"
+                      alt=""
+                      className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
+                      style={{ aspectRatio: "4 / 3" }}
+                    />
+                    <Box className="mt-4 text-center mb-3">
+                      <Box className="mt-4">
+                        <Box className="inline-block">
+                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$129.95</Box>
+                        </Box>
+                      </Box>
+                      <Box>Bose SoundLink Color</Box>
+                      <Box>Bluetooth Speaker II</Box> 
+                    </Box>
+                  </Link>
+                </Box>
+
+                <Box>
+                  <Link to="/DiscoverNow" className="group relative block">
+                    <img
+                      src="https://gradeatechnology.co.uk/wp-content/uploads/2023/09/Sonos-Boost-Main-450x450.png"
+                      alt=""
+                      className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                      style={{ aspectRatio: "4 / 3" }}
+                    />
+                    <Box className="mt-4 text-center mb-3">
+                      <Box className="mt-4">
+                        <Box className="inline-block">
+                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$99.95</Box>
+                        </Box>
+                      </Box>
+                      <Box>Beats Solo3 Wireless</Box>
+                      <Box>On-Ear Headphones</Box> 
+                    </Box>
+                  </Link>
+                </Box>
+
+              </Box>
+            </Box>
+            
+          </Box>
+          {/** 6 ô sản phẩm còn lại*/}
+        </Box>
+      </Box>
+      {/** Banner phu 2 - Ngoc*/}
+      
     </Box>
   );
 };
 
 export default BannerPage;
+
+
