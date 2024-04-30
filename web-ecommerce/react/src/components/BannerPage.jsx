@@ -200,7 +200,7 @@ const BannerPage = () => {
 
       {/** Banner phu 2 - Ngoc*/}
       <Box className="mx-auto px-3 py-3">
-        <Box className="mt-3 mb-3 grid grid-cols-1 gap-2 lg:grid-cols-12">
+        <Box className="mt-5 mb-3 grid grid-cols-1 gap-2 lg:grid-cols-12">
           {/** ô đầu tiên Deals of the month*/}
           <Box className="lg:col-span-4" style={{ border: '2px solid #32CD32', boxShadow: '0 0 5px green' }}>
             <Box className="px-4">
