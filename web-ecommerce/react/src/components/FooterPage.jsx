@@ -19,9 +19,9 @@ const FooterPage = () => {
               <Box className="mt-2 max-w-xs text-gray-500">
                 Media Market, LLC 5 South Main Street, Englishtown, NJ 07726
               </Box>
-              <Box>
+              {/* <Box>
                 <BeakerIcon className="h-6 w-6 text-blue-500" />
-              </Box>
+              </Box> */}
               <ul className="mt-8 flex gap-4">
                 <li>
                   <a

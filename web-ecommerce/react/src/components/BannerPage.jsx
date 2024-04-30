@@ -99,124 +99,100 @@ const BannerPage = () => {
 
       {/** Banner phu 1 - Ngoc*/}
       <Box className="mx-auto px-3 py-3">
-        <Box className="mt-3 grid grid-cols-1 gap-2 lg:grid-cols-6">
-          <Box>
-            <Box display="flex" flexDirection="column" height="100%">
-              <Box
-                flexGrow={1}
-                display="flex"
-                className="transition duration-500 group-hover:opacity-90"
-                style={{ aspectRatio: "4 / 2" }}
-              >
-                <Box textAlign="left">
-                  <Box
-                    component="span"
-                    fontSize="1.3rem"
-                    fontWeight="bold"
-                    color="black"
-                  >
-                    2024{"'"}s
-                  </Box>
-                  <br />
-                  <Box component="span" fontSize="1.5rem" color="black">
-                    Best Selling Products
-                  </Box>
+        <Box className="mt-3 mb-3 grid grid-cols-1 gap-2 lg:grid-cols-6">
+          <Box className="relative grid grid-cols-1 gap-1 sm:grid-cols-1 lg:col-span-6 lg:grid-cols-6">
+            <Box className="text-3xl sm:text-2xl lg:text-2xl xl:text-3xl">
+              <Box to="/DiscoverNow" className="group relative block">
+                <Box
+                  className="transition duration-500 group-hover:opacity-90 aspect-square w-full object-cover"
+                  style={{ aspectRatio: "20 / 1" }}
+                />
+                <Box className="font-medium font-weight-bold">2024{"'"}s</Box>
+                <Box className="text-capitalize">Best Selling Products</Box>
+                <Box display="flex" alignItems="left" mt={1}>
+                  <FaCircleChevronLeft className="text-gray-500" />
+                  <Box className="w-3" />
+                  <FaCircleChevronRight className="text-gray-500" />
+                </Box>
+                <Box mt={1}>
+                  <Link to="/DiscoverNow">
+                    <Box className="font-weight-bold block" color="DodgerBlue">
+                      FULL CATALOG&gt;
+                    </Box>
+                  </Link>
                 </Box>
               </Box>
-              <Box display="flex" alignItems="left" mt={1}>
-                <FaCircleChevronLeft
-                  style={{ color: "gray", fontSize: "24px" }}
-                />
-                <Box width="12px" />
-                <FaCircleChevronRight
-                  style={{ color: "gray", fontSize: "24px" }}
-                />
-              </Box>
-              <Box mt={1}>
-                <Link to="/DiscoverNow">
-                  <Box
-                    component="span"
-                    fontSize="md"
-                    color="DodgerBlue"
-                    fontWeight="bold"
-                    textAlign="left"
-                    display="block"
-                  >
-                    FULL CATALOG &gt;
-                  </Box>
-                </Link>
-              </Box>
             </Box>
-          </Box>
 
-          <Box>
-            <Link to="/DiscoverNow" className="group relative block">
-              <img
-                src="https://i.guim.co.uk/img/media/abef140b67ba87dd7dfbd528206c880b6d659736/0_102_3600_2160/master/3600.jpg?width=1300&dpr=2&s=none"
-                alt=""
-                className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
-                style={{ aspectRatio: "4 / 3" }}
-              />
-              <Box className="mt-1 text-center" fontSize="sm" fontWeight="bold">
-                AUDIO
-              </Box>
-            </Link>
-          </Box>
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block">
+                <img
+                  src="https://i.guim.co.uk/img/media/abef140b67ba87dd7dfbd528206c880b6d659736/0_102_3600_2160/master/3600.jpg?width=1300&dpr=2&s=none"
+                  alt=""
+                  className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="mt-1 text-center font-weight-bold">AUDIO</Box>
+              </Link>
+            </Box>
 
-          <Box>
-            <Link to="/DiscoverNow" className="group relative block">
-              <img
-                src="https://huylananhaudio.vn/media/lib/1710_TiviSamsungLEDUA65MU8000K-6.jpg"
-                alt=""
-                className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
-                style={{ aspectRatio: "4 / 3" }}
-              />
-              <Box className="mt-1 text-center" fontSize="sm" fontWeight="bold">
-                PREMIUM TV
-              </Box>
-            </Link>
-          </Box>
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block">
+                <img
+                  src="https://huylananhaudio.vn/media/lib/1710_TiviSamsungLEDUA65MU8000K-6.jpg"
+                  alt=""
+                  className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="mt-1 text-center font-weight-bold">
+                  PREMIUM TV
+                </Box>
+              </Link>
+            </Box>
 
-          <Box>
-            <Link to="/DiscoverNow" className="group relative block">
-              <img
-                src="https://phukienflytech.vn/wp-content/uploads/2021/02/11.jpg"
-                alt=""
-                className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
-                style={{ aspectRatio: "4 / 3" }}
-              />
-              <Box className="mt-1 text-center" fontSize="sm" fontWeight="bold">
-                GADGETS
-              </Box>
-            </Link>
-          </Box>
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block">
+                <img
+                  src="https://phukienflytech.vn/wp-content/uploads/2021/02/11.jpg"
+                  alt=""
+                  className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box
+                  className="mt-1 text-center font-weight-bold"
+                  fontSize="sm"
+                  fontWeight="bold"
+                >
+                  GADGETS
+                </Box>
+              </Link>
+            </Box>
 
-          <Box>
-            <Link to="/DiscoverNow" className="group relative block">
-              <img
-                src="https://www.techone.vn/wp-content/uploads/2023/05/d_2.webp"
-                alt=""
-                className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
-                style={{ aspectRatio: "4 / 3" }}
-              />
-              <Box className="mt-1 text-center" fontSize="sm" fontWeight="bold">
-                TABLETS
-              </Box>
-            </Link>
-          </Box>
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block">
+                <img
+                  src="https://www.techone.vn/wp-content/uploads/2023/05/d_2.webp"
+                  alt=""
+                  className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="mt-1 text-center font-weight-bold">TABLETS</Box>
+              </Link>
+            </Box>
 
-          <Box>
-            <Link to="/DiscoverNow" className="group relative block">
-              <img
-                src="https://www.stonegroup.co.uk/media/catalog/product/cache/8e482c6f1356532ccb53b80dfbe0f6ff/C/7/C7100A27-74A3-4651-8ED9-9DD9FC35201B.jpg"
-                alt=""
-                className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
-                style={{ aspectRatio: "4 / 3" }}
-              />
-              <Box className="mt-1 text-center" fontSize="sm" fontWeight="bold">
-                HEADPHONES
-              </Box>
-            </Link>
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block">
+                <img
+                  src="https://www.stonegroup.co.uk/media/catalog/product/cache/8e482c6f1356532ccb53b80dfbe0f6ff/C/7/C7100A27-74A3-4651-8ED9-9DD9FC35201B.jpg"
+                  alt=""
+                  className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="mt-1 text-center font-weight-bold">
+                  HEADPHONES
+                </Box>
+              </Link>
+            </Box>
           </Box>
         </Box>
       </Box>
