@@ -116,7 +116,7 @@ const BannerPage = () => {
                 </Box>
                 <Box mt={1}>
                   <Link to="/DiscoverNow">
-                    <Box className="font-weight-bold block" color="DodgerBlue">
+                    <Box className="font-weight-bold block" color="DodgerBlue" font-size= "x-large">
                       FULL CATALOG&gt;
                     </Box>
                   </Link>
