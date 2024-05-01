@@ -428,16 +428,160 @@ const BannerPage = () => {
                     </Box>
                   </Link>
                 </Box>
-
               </Box>
             </Box>
-            
           </Box>
           {/** 6 ô sản phẩm còn lại*/}
         </Box>
       </Box>
       {/** Banner phu 2 - Ngoc*/}
       
+      {/** Banner phu 3 - Ngoc*/}
+      <Box className="mx-auto px-3 py-3">
+       <Box className="mt-2 mb-2 text-left text-3xl">
+          <Box className="inline-block">
+            <Box className="font-bold">Best Sellers</Box>
+          </Box>
+          <Box className="inline-block ml-2">
+            <Box>Products</Box>
+          </Box>
+        </Box>
+        <hr/>
+
+        <Box className="mt-4 mb-3 grid grid-cols-1 gap-2 lg:grid-cols-6">
+          <Box className="relative grid grid-cols-1 gap-1 sm:grid-cols-1 lg:col-span-6 lg:grid-cols-6">
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                <img
+                  src="https://tse1.mm.bing.net/th?id=OIP.BG7rUauKgvXARTWgtq-UdAHaHa&pid=Api&P=0&h=220"
+                  alt=""
+                  className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="mt-4 text-center mb-3">
+                  <Box className="mt-4">
+                    <Box className="inline-block">
+                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$499.99</Box>
+                    </Box>
+                  </Box>
+                  <Box>Hover Camera Passport</Box>
+                  <Box>Personal Photographer</Box> 
+                </Box>
+              </Link>
+            </Box>
+
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                <img
+                  src="https://product.hstatic.net/200000144777/product/1_7c83aa287e9f457ead7bd4a7af37911f_master.png"
+                  alt=""
+                  className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="absolute top-3 right-5 bg-green-500 text-white font-bold px-2 square-full">
+                  SALE
+                </Box>
+                <Box className="mt-4 text-center mb-3">
+                  <Box className="mt-4">
+                    <Box className="inline-block">
+                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$295</Box>
+                    </Box>
+                    <Box className="inline-block ml-3">
+                      <Box className="text-gray-500 line-through">$399.95</Box>
+                    </Box>
+                  </Box>
+                  <Box>Bose SoundLink Revolve+</Box>
+                  <Box>Bluetooth Speaker</Box> 
+                </Box>
+              </Link>
+            </Box>
+
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                <img
+                  src="https://tse4.mm.bing.net/th?id=OIP.e3kSK_HFX3i_AoUgtYO9zwHaHa&pid=Api&P=0&h=220"
+                  alt=""
+                  className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="mt-4 text-center mb-3">
+                  <Box className="mt-4">
+                    <Box className="inline-block">
+                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$299.95</Box>
+                    </Box>
+                  </Box>
+                  <Box>GoPro HERO5</Box>
+                  <Box>Session Camera</Box> 
+                </Box>
+              </Link>
+            </Box>
+
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  alt=""
+                  className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="absolute top-3 right-2 bg-blue-400 text-white font-bold px-2 square-full">
+                  NEW
+                </Box>
+                <Box className="mt-4 text-center mb-3">
+                  <Box className="mt-4">
+                    <Box className="inline-block">
+                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>ADD TO CART</Box>
+                    </Box>
+                  </Box>
+                  <Box>AirPods</Box>
+                  <Box>White Color</Box> 
+                </Box>
+              </Link>
+            </Box>
+
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                <img
+                  src="https://tse1.mm.bing.net/th?id=OIP.D2pPzFbOEYkicxy4EopZRgHaHa&pid=Api&P=0&h=220"
+                  alt=""
+                  className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="mt-4 text-center mb-3">
+                  <Box className="mt-4">
+                    <Box className="inline-block">
+                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$109.95</Box>
+                    </Box>
+                  </Box>
+                  <Box>Beats Black</Box>
+                  <Box>Earphones</Box> 
+                </Box>
+              </Link>
+            </Box>
+
+            <Box>
+              <Link to="/DiscoverNow" className="group relative block">
+                <img
+                  src="https://powers-energy-solution.myshopify.com/cdn/shop/products/81LzyoUMuxL._SL1500_1024x1024.jpg?v=1487556082"
+                  alt=""
+                  className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                  style={{ aspectRatio: "4 / 3" }}
+                />
+                <Box className="mt-4 text-center mb-3">
+                  <Box className="mt-4">
+                    <Box className="inline-block">
+                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$299.95</Box>
+                    </Box>
+                  </Box>
+                  <Box>August Smart Lock</Box>
+                  <Box>HomeKit Enabled</Box> 
+                </Box>
+              </Link>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+      {/** Banner phu 3 - Ngoc*/}
     </Box>
   );
 };
