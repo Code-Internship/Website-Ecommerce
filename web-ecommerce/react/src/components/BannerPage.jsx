@@ -458,8 +458,8 @@ const BannerPage = () => {
                   className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
                   style={{ aspectRatio: "4 / 3" }}
                 />
-                <Box className="mt-4 text-center mb-3">
-                  <Box className="mt-4">
+                <Box className="text-center mb-3">
+                  <Box className="mt-2">
                     <Box className="inline-block">
                       <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$499.99</Box>
                     </Box>
@@ -481,8 +481,8 @@ const BannerPage = () => {
                 <Box className="absolute top-3 right-5 bg-green-500 text-white font-bold px-2 square-full">
                   SALE
                 </Box>
-                <Box className="mt-4 text-center mb-3">
-                  <Box className="mt-4">
+                <Box className="text-center mb-3">
+                  <Box className="mt-2">
                     <Box className="inline-block">
                       <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$295</Box>
                     </Box>
@@ -504,8 +504,8 @@ const BannerPage = () => {
                   className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
                   style={{ aspectRatio: "4 / 3" }}
                 />
-                <Box className="mt-4 text-center mb-3">
-                  <Box className="mt-4">
+                <Box className="text-center mb-3">
+                  <Box className="mt-2">
                     <Box className="inline-block">
                       <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$299.95</Box>
                     </Box>
@@ -527,8 +527,8 @@ const BannerPage = () => {
                 <Box className="absolute top-3 right-2 bg-blue-400 text-white font-bold px-2 square-full">
                   NEW
                 </Box>
-                <Box className="mt-4 text-center mb-3">
-                  <Box className="mt-4">
+                <Box className="text-center mb-3">
+                  <Box className="mt-2">
                     <Box className="inline-block">
                       <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>ADD TO CART</Box>
                     </Box>
@@ -547,8 +547,8 @@ const BannerPage = () => {
                   className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
                   style={{ aspectRatio: "4 / 3" }}
                 />
-                <Box className="mt-4 text-center mb-3">
-                  <Box className="mt-4">
+                <Box className="text-center mb-3">
+                  <Box className="mt-2">
                     <Box className="inline-block">
                       <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$109.95</Box>
                     </Box>
@@ -567,8 +567,8 @@ const BannerPage = () => {
                   className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
                   style={{ aspectRatio: "4 / 3" }}
                 />
-                <Box className="mt-4 text-center mb-3">
-                  <Box className="mt-4">
+                <Box className="text-center mb-3">
+                  <Box className="mt-2">
                     <Box className="inline-block">
                       <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$299.95</Box>
                     </Box>
