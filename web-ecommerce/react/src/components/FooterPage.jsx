@@ -460,8 +460,8 @@ const FooterPage = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
                     y="0px"
-                    width="35"
-                    height="35"
+                    width="25"
+                    height="25"
                     viewBox="0 0 48 48"
                   >
                     <path
@@ -486,8 +486,8 @@ const FooterPage = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
                     y="0px"
-                    width="35"
-                    height="35"
+                    width="25"
+                    height="25"
                     viewBox="0 0 48 48"
                   >
                     <path
@@ -512,8 +512,8 @@ const FooterPage = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
                     y="0px"
-                    width="35"
-                    height="35"
+                    width="25"
+                    height="25"
                     viewBox="0 0 48 48"
                   >
                     <path
@@ -535,8 +535,8 @@ const FooterPage = () => {
                 {/* Skrill */}
                 <Box className="shadow shadow-sm bg-white">
                   <svg
-                    width="35px"
-                    height="35px"
+                    width="25"
+                    height="25"
                     viewBox="0 -9 58 58"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -610,8 +610,8 @@ const FooterPage = () => {
                     version="1.2"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1599 1599"
-                    width="35"
-                    height="35"
+                    width="25"
+                    height="25"
                   >
                     <title>
                       WesternUnion_HorizontalLockup_YellowBlack_(1)-svg

@@ -214,11 +214,11 @@ const BannerPage = () => {
                   </Box>
                 </Box>
                 <hr/>
-                <img 
-                  src="https://images.ctfassets.net/a3qyhfznts9y/1jn5oYLXGLx2cJuiK9TAyI/7cc3df75b85ba3af685b93bea0ca87d5/3x2-ecobee3lite-AngleFront-US_3x.png?w=1366&h=911&q=80&fm=webp" 
-                  alt="" 
-                  className="w-full object-cover rounded-full" 
-                  style={{ aspectRatio: "4 / 3" }} 
+                <img
+                  src="https://images.ctfassets.net/a3qyhfznts9y/1jn5oYLXGLx2cJuiK9TAyI/7cc3df75b85ba3af685b93bea0ca87d5/3x2-ecobee3lite-AngleFront-US_3x.png?w=1366&h=911&q=80&fm=webp"
+                  alt=""
+                  className="w-full object-cover rounded-full"
+                  style={{ aspectRatio: "4 / 3" }}
                 />
                 <Box className="absolute top-12 right-12 bg-green-500 text-white px-4 py-4 rounded-full">
                   SAVE<br/>$99.00
@@ -267,7 +267,7 @@ const BannerPage = () => {
                     </Box>
                     <Box className="text-xs font-bold">MINS</Box>
                   </Box>
-                  
+
                   <Box>
                     <Box className="flex items-center justify-center">
                       <Box className="bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center">
@@ -276,8 +276,8 @@ const BannerPage = () => {
                     </Box>
                     <Box className="text-xs font-bold">SECS</Box>
                   </Box>
-                  
-                </Box> 
+
+                </Box>
               </Box>
             </Box>
           </Box>
@@ -318,7 +318,7 @@ const BannerPage = () => {
                         </Box>
                       </Box>
                       <Box>Beats Solo3 Wireless</Box>
-                      <Box>On-Ear Headphones</Box> 
+                      <Box>On-Ear Headphones</Box>
                     </Box>
                   </Link>
                 </Box>
@@ -338,14 +338,14 @@ const BannerPage = () => {
                         </Box>
                       </Box>
                       <Box>Devialet Gold Phantom</Box>
-                      <Box>Wireless Speaker</Box> 
+                      <Box>Wireless Speaker</Box>
                     </Box>
                   </Link>
                 </Box>
 
                 <Box>
                   <Link to="/DiscoverNow" className="group relative block">
-                    <img 
+                    <img
                       src="https://media.pricebook.co.id/images/product/L/69468_L_1.jpg"
                       alt=""
                       className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
@@ -358,7 +358,7 @@ const BannerPage = () => {
                         </Box>
                       </Box>
                       <Box>Apple Watch Nike+</Box>
-                      <Box>With Sport Band</Box> 
+                      <Box>With Sport Band</Box>
                     </Box>
                   </Link>
                 </Box>
@@ -381,7 +381,7 @@ const BannerPage = () => {
                         </Box>
                       </Box>
                       <Box>Parrot Mambo</Box>
-                      <Box>MiniDrone</Box> 
+                      <Box>MiniDrone</Box>
                     </Box>
                   </Link>
                 </Box>
@@ -401,7 +401,7 @@ const BannerPage = () => {
                         </Box>
                       </Box>
                       <Box>Bose SoundLink Color</Box>
-                      <Box>Bluetooth Speaker II</Box> 
+                      <Box>Bluetooth Speaker II</Box>
                     </Box>
                   </Link>
                 </Box>
@@ -424,7 +424,7 @@ const BannerPage = () => {
                         </Box>
                       </Box>
                       <Box>Beats Solo3 Wireless</Box>
-                      <Box>On-Ear Headphones</Box> 
+                      <Box>On-Ear Headphones</Box>
                     </Box>
                   </Link>
                 </Box>
@@ -435,7 +435,7 @@ const BannerPage = () => {
         </Box>
       </Box>
       {/** Banner phu 2 - Ngoc*/}
-      
+
       {/** Banner phu 3 - Ngoc*/}
       <Box className="mx-auto px-3 py-3">
        <Box className="mt-2 mb-2 text-left text-3xl">
@@ -465,7 +465,7 @@ const BannerPage = () => {
                     </Box>
                   </Box>
                   <Box>Hover Camera Passport</Box>
-                  <Box>Personal Photographer</Box> 
+                  <Box>Personal Photographer</Box>
                 </Box>
               </Link>
             </Box>
@@ -491,7 +491,7 @@ const BannerPage = () => {
                     </Box>
                   </Box>
                   <Box>Bose SoundLink Revolve+</Box>
-                  <Box>Bluetooth Speaker</Box> 
+                  <Box>Bluetooth Speaker</Box>
                 </Box>
               </Link>
             </Box>
@@ -511,7 +511,7 @@ const BannerPage = () => {
                     </Box>
                   </Box>
                   <Box>GoPro HERO5</Box>
-                  <Box>Session Camera</Box> 
+                  <Box>Session Camera</Box>
                 </Box>
               </Link>
             </Box>
@@ -534,7 +534,7 @@ const BannerPage = () => {
                     </Box>
                   </Box>
                   <Box>AirPods</Box>
-                  <Box>White Color</Box> 
+                  <Box>White Color</Box>
                 </Box>
               </Link>
             </Box>
@@ -554,7 +554,7 @@ const BannerPage = () => {
                     </Box>
                   </Box>
                   <Box>Beats Black</Box>
-                  <Box>Earphones</Box> 
+                  <Box>Earphones</Box>
                 </Box>
               </Link>
             </Box>
@@ -574,7 +574,7 @@ const BannerPage = () => {
                     </Box>
                   </Box>
                   <Box>August Smart Lock</Box>
-                  <Box>HomeKit Enabled</Box> 
+                  <Box>HomeKit Enabled</Box>
                 </Box>
               </Link>
             </Box>
@@ -582,6 +582,12 @@ const BannerPage = () => {
         </Box>
       </Box>
       {/** Banner phu 3 - Ngoc*/}
+
+      {/** Banner phu 4 - Nghia */}
+      {/** Banner phu 4 - Nghia */}
+
+      {/** Banner phu 5 - Ngoc */}
+      {/** Banner phu 5 - Ngoc */}
     </Box>
   );
 };
