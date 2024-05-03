@@ -1,9 +1,22 @@
-import { Box } from "@mui/material";
+import { Box, Tab, tabsClasses } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaCircleChevronRight } from "react-icons/fa6";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
+
+import TvAudio from "./TvAudio";
+import React from "react";
+import ComputerLaptops from "./ComputerLaptops";
+import CameraPhotos from "./CameraPhotos";
+import CarElectronicsGPS from "./CarElectronicsGPS";
 
 const BannerPage = () => {
+  const [value, setValue] = React.useState("1");
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <Box>
       {/** Banner chinh - Nghia*/}
@@ -116,7 +129,11 @@ const BannerPage = () => {
                 </Box>
                 <Box mt={1}>
                   <Link to="/DiscoverNow">
-                    <Box className="font-weight-bold block" color="DodgerBlue" font-size= "x-large">
+                    <Box
+                      className="font-weight-bold block"
+                      color="DodgerBlue"
+                      font-size="x-large"
+                    >
                       FULL CATALOG&gt;
                     </Box>
                   </Link>
@@ -202,7 +219,10 @@ const BannerPage = () => {
       <Box className="mx-auto px-3 py-3">
         <Box className="mt-5 mb-3 grid grid-cols-1 gap-2 lg:grid-cols-12">
           {/** ô đầu tiên Deals of the month*/}
-          <Box className="lg:col-span-4" style={{ border: '2px solid #32CD32', boxShadow: '0 0 5px green' }}>
+          <Box
+            className="lg:col-span-4"
+            style={{ border: "2px solid #32CD32", boxShadow: "0 0 5px green" }}
+          >
             <Box className="px-4">
               <Box className="relative">
                 <Box className="mt-2 mb-2 text-center text-xl">
@@ -213,7 +233,7 @@ const BannerPage = () => {
                     <Box>of the month</Box>
                   </Box>
                 </Box>
-                <hr/>
+                <hr />
                 <img
                   src="https://images.ctfassets.net/a3qyhfznts9y/1jn5oYLXGLx2cJuiK9TAyI/7cc3df75b85ba3af685b93bea0ca87d5/3x2-ecobee3lite-AngleFront-US_3x.png?w=1366&h=911&q=80&fm=webp"
                   alt=""
@@ -221,22 +241,31 @@ const BannerPage = () => {
                   style={{ aspectRatio: "4 / 3" }}
                 />
                 <Box className="absolute top-12 right-12 bg-green-500 text-white px-4 py-4 rounded-full">
-                  SAVE<br/>$99.00
+                  SAVE
+                  <br />
+                  $99.00
                 </Box>
 
                 <Box className="mt-4 text-center mb-3">
                   <Box className="mt-4">
                     <Box className="inline-block">
-                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$169.95</Box>
+                      <Box
+                        className="text-lg font-bold"
+                        style={{ color: "DodgerBlue" }}
+                      >
+                        $169.95
+                      </Box>
                     </Box>
                     <Box className="inline-block ml-2">
                       <Box className="text-gray-500 line-through">$269.00</Box>
                     </Box>
                   </Box>
-                  <Box className="mt-2 text-lg">ecobee3 lite Smart Thermostat</Box>
+                  <Box className="mt-2 text-lg">
+                    ecobee3 lite Smart Thermostat
+                  </Box>
                 </Box>
               </Box>
-              <hr/>
+              <hr />
               <Box className="mt-4 p-2 rounded text-center text-xl">
                 <Box className="uppercase font-bold">Hurry Up!</Box>
                 <Box>Offer Ends In:</Box>
@@ -276,7 +305,6 @@ const BannerPage = () => {
                     </Box>
                     <Box className="text-xs font-bold">SECS</Box>
                   </Box>
-
                 </Box>
               </Box>
             </Box>
@@ -288,23 +316,22 @@ const BannerPage = () => {
             <Box className="px-3">
               <Box className="mt-2 mb-2 text-left text-xl">
                 <Box className="inline-block">
-                  <Box className="font-bold" style={{ color: 'red' }}>New Arrivals</Box>
+                  <Box className="font-bold" style={{ color: "red" }}>
+                    New Arrivals
+                  </Box>
                 </Box>
-                <Box className="inline-block ml-5">
-                  On Sale
-                </Box>
-                <Box className="inline-block ml-5">
-                  Best Rated
-                </Box>
-                <Box className="inline-block ml-5">
-                  Popular Products
-                </Box>
+                <Box className="inline-block ml-5">On Sale</Box>
+                <Box className="inline-block ml-5">Best Rated</Box>
+                <Box className="inline-block ml-5">Popular Products</Box>
               </Box>
-              <hr/>
+              <hr />
 
               <Box className="grid grid-cols-3 gap-2 mt-2">
                 <Box>
-                  <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                  <Link
+                    to="/DiscoverNow"
+                    className="group relative block border-r border-gray-300"
+                  >
                     <img
                       src="https://www.backmarket.com/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D260/https://d2e6ccujb3mkqf.cloudfront.net/c25b4545-ed00-4933-ab01-a55114f549a1-2_3d8cb8ce-be26-49c2-8073-e14dbe22585e.jpg"
                       alt=""
@@ -314,7 +341,12 @@ const BannerPage = () => {
                     <Box className="mt-4 text-center mb-3">
                       <Box className="mt-4">
                         <Box className="inline-block">
-                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$299.95</Box>
+                          <Box
+                            className="text-lg font-bold"
+                            style={{ color: "DodgerBlue" }}
+                          >
+                            $299.95
+                          </Box>
                         </Box>
                       </Box>
                       <Box>Beats Solo3 Wireless</Box>
@@ -324,7 +356,10 @@ const BannerPage = () => {
                 </Box>
 
                 <Box>
-                  <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                  <Link
+                    to="/DiscoverNow"
+                    className="group relative block border-r border-gray-300"
+                  >
                     <img
                       src="https://techlandaudio.com.vn/wp-content/uploads/2021/02/loa-bluetooth-devialet-phantom-1-108-db-gold_2-1.jpg"
                       alt=""
@@ -334,7 +369,12 @@ const BannerPage = () => {
                     <Box className="mt-4 text-center mb-3">
                       <Box className="mt-4">
                         <Box className="inline-block">
-                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$2 989.95</Box>
+                          <Box
+                            className="text-lg font-bold"
+                            style={{ color: "DodgerBlue" }}
+                          >
+                            $2 989.95
+                          </Box>
                         </Box>
                       </Box>
                       <Box>Devialet Gold Phantom</Box>
@@ -354,7 +394,12 @@ const BannerPage = () => {
                     <Box className="mt-4 text-center mb-3">
                       <Box className="mt-4">
                         <Box className="inline-block">
-                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$369.00</Box>
+                          <Box
+                            className="text-lg font-bold"
+                            style={{ color: "DodgerBlue" }}
+                          >
+                            $369.00
+                          </Box>
                         </Box>
                       </Box>
                       <Box>Apple Watch Nike+</Box>
@@ -364,7 +409,10 @@ const BannerPage = () => {
                 </Box>
 
                 <Box>
-                  <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                  <Link
+                    to="/DiscoverNow"
+                    className="group relative block border-r border-gray-300"
+                  >
                     <img
                       src="https://fr.mathworks.com/help/simulink/supportpkg/parrot_ug/parrot_mambo_stabilized.png"
                       alt=""
@@ -377,7 +425,12 @@ const BannerPage = () => {
                     <Box className="mt-4 text-center mb-3">
                       <Box className="mt-4">
                         <Box className="inline-block">
-                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$109.95</Box>
+                          <Box
+                            className="text-lg font-bold"
+                            style={{ color: "DodgerBlue" }}
+                          >
+                            $109.95
+                          </Box>
                         </Box>
                       </Box>
                       <Box>Parrot Mambo</Box>
@@ -387,7 +440,10 @@ const BannerPage = () => {
                 </Box>
 
                 <Box>
-                  <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+                  <Link
+                    to="/DiscoverNow"
+                    className="group relative block border-r border-gray-300"
+                  >
                     <img
                       src="https://static.bhphoto.com/images/multiple_images/images500x500/1475971300_IMG_695070.jpg"
                       alt=""
@@ -397,7 +453,12 @@ const BannerPage = () => {
                     <Box className="mt-4 text-center mb-3">
                       <Box className="mt-4">
                         <Box className="inline-block">
-                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$129.95</Box>
+                          <Box
+                            className="text-lg font-bold"
+                            style={{ color: "DodgerBlue" }}
+                          >
+                            $129.95
+                          </Box>
                         </Box>
                       </Box>
                       <Box>Bose SoundLink Color</Box>
@@ -420,7 +481,12 @@ const BannerPage = () => {
                     <Box className="mt-4 text-center mb-3">
                       <Box className="mt-4">
                         <Box className="inline-block">
-                          <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$99.95</Box>
+                          <Box
+                            className="text-lg font-bold"
+                            style={{ color: "DodgerBlue" }}
+                          >
+                            $99.95
+                          </Box>
                         </Box>
                       </Box>
                       <Box>Beats Solo3 Wireless</Box>
@@ -438,7 +504,7 @@ const BannerPage = () => {
 
       {/** Banner phu 3 - Ngoc*/}
       <Box className="mx-auto px-3 py-3">
-       <Box className="mt-2 mb-2 text-left text-2xl">
+        <Box className="mt-2 mb-2 text-left text-2xl">
           <Box className="inline-block">
             <Box className="font-bold">Best Sellers</Box>
           </Box>
@@ -446,12 +512,15 @@ const BannerPage = () => {
             <Box>Products</Box>
           </Box>
         </Box>
-        <hr/>
+        <hr />
 
         <Box className="mt-4 mb-3 grid grid-cols-1 gap-2 lg:grid-cols-6">
           <Box className="relative grid grid-cols-1 gap-1 sm:grid-cols-1 lg:col-span-6 lg:grid-cols-6">
             <Box>
-              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+              <Link
+                to="/DiscoverNow"
+                className="group relative block border-r border-gray-300"
+              >
                 <img
                   src="https://tse1.mm.bing.net/th?id=OIP.BG7rUauKgvXARTWgtq-UdAHaHa&pid=Api&P=0&h=220"
                   alt=""
@@ -461,7 +530,12 @@ const BannerPage = () => {
                 <Box className="text-center mb-3">
                   <Box className="mt-2">
                     <Box className="inline-block">
-                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$499.99</Box>
+                      <Box
+                        className="text-lg font-bold"
+                        style={{ color: "DodgerBlue" }}
+                      >
+                        $499.99
+                      </Box>
                     </Box>
                   </Box>
                   <Box>Hover Camera Passport</Box>
@@ -471,7 +545,10 @@ const BannerPage = () => {
             </Box>
 
             <Box>
-              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+              <Link
+                to="/DiscoverNow"
+                className="group relative block border-r border-gray-300"
+              >
                 <img
                   src="https://product.hstatic.net/200000144777/product/1_7c83aa287e9f457ead7bd4a7af37911f_master.png"
                   alt=""
@@ -484,7 +561,12 @@ const BannerPage = () => {
                 <Box className="text-center mb-3">
                   <Box className="mt-2">
                     <Box className="inline-block">
-                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$295</Box>
+                      <Box
+                        className="text-lg font-bold"
+                        style={{ color: "DodgerBlue" }}
+                      >
+                        $295
+                      </Box>
                     </Box>
                     <Box className="inline-block ml-3">
                       <Box className="text-gray-500 line-through">$399.95</Box>
@@ -497,7 +579,10 @@ const BannerPage = () => {
             </Box>
 
             <Box>
-              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+              <Link
+                to="/DiscoverNow"
+                className="group relative block border-r border-gray-300"
+              >
                 <img
                   src="https://tse4.mm.bing.net/th?id=OIP.e3kSK_HFX3i_AoUgtYO9zwHaHa&pid=Api&P=0&h=220"
                   alt=""
@@ -507,7 +592,12 @@ const BannerPage = () => {
                 <Box className="text-center mb-3">
                   <Box className="mt-2">
                     <Box className="inline-block">
-                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$299.95</Box>
+                      <Box
+                        className="text-lg font-bold"
+                        style={{ color: "DodgerBlue" }}
+                      >
+                        $299.95
+                      </Box>
                     </Box>
                   </Box>
                   <Box>GoPro HERO5</Box>
@@ -517,7 +607,10 @@ const BannerPage = () => {
             </Box>
 
             <Box>
-              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+              <Link
+                to="/DiscoverNow"
+                className="group relative block border-r border-gray-300"
+              >
                 <img
                   src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPDw8PDhANDQ0NDQ4NDQ8NEBANDQ0NFhEWFhYRExUYHCggGBomHRUVITEhMSkrLi4zFx8zODMtNygtLi0BCgoKDg0NDw0NDisZFRkrKysrKy0tKysrLTcrLS0rLSsrKystKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAAAwEEBQIGB//EADkQAAIBAgMEBgkDAwUAAAAAAAABAgMRBCExElFhcQUyQXKBsQYTFCJTkZKhwUJi8DOy4SNDUoKi/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oADAMBAAIRAxEAPwD9xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGG7anh14rtAoCHtcN/kY9shv+6A2Aa/tkN/3Q9thv+6A2Aa/tsN/3Q9shv8AugNgGv7ZDf8AdGfa4b/IC4JLERZ7jNPRgegAAAAAAAAAAAAAAAAAAAAAhXxCjks3plnnwPWJqbK/mhpbcYLbqNRvv7FuRR72JSzk7cFr4syqEdyfPN/c0KvTMdIJvi8jVnj5T7WluWRR2ZShHXYj8kRljKa0z5I5KZ6SA6ccZB9jXgjYi01dWaOVCBt4R2duxoDbsuBCeKgt75LI9YqXu83bwNCcQNtY2n2prml+CsKtOWji+eT+5yJRPDYHddGL/SvkeXRt1W1wfvI40MZKOkny1RsU+mbdZX4rJgdSliGnaS/N+TNtO+aOZRxVOsrRee55ST3o2cLUs9l8vHeQbYAIAAAAAAAAAAAAAAAANLFu8kuKX5ONjb1KjWbt7sUdev8A1F3n5HnB0Yq8tW5SV+Tat9ijQwvQy1qfSnZeLOnSwkI9WMVyRW5m5ROeHT7E+Z870j0phqOKhhJylSr1YKpT24uNKom2rRm8m/deXYfT3OL6W+jtPpHDulJ7FWD28PV/VSqb7rO2S+SeqQCDNrDa34HJ6GwuLp4aEcb6t4ineEpUpOcKkF1Z3aWbXZY62G6t94RTEZx5M1Js25O6tvNOEHJuyu1eyejfYgOZ0n0vh8NKnGvOW3WnGFKlTi6lWo27ZRWfafR0cJFdiXmfL+i3otWhiavSHSLpVMXNyjh4U2508NS7Em11rbss3vy+wuFTlQi9UnzVzQxXREJZx9x8NPkdK5i4Hzc8LKk88ms01o+R2KVS+xLtlHPmv4zZrU1NNPtNOhGygtc5fKzA6ydzJ5p6LkvI9GQAAAAAAAAAAAAAAABpY6PauD8V/gjhpe7/AN6j/wDbOhVhtK3bquZzL2Vv3T/uZRzfSb0twvRqpvFSmvXOWwqcNuWzG21JrcrrjnkdmliIyjGcWpRnFTjJaSi1dNeBwfSH0fwnSCprGUVWVGTlTvOdNq9rq8Wm4uyutHZHQ9YopJWSSSSWSSWiSKjoqoe4zOT6/ii9OuFb1WzTRo3tluyLxqmpi5WlzAptmzhYJJve7nNhO7S3s6W3ZIC7kTdQ151zWniOKA6HrDg1PTHBxx66Oc5e1Nxi/d/041JRUo03L/k009LZrM3o1uKOZL0ewcsYukHQi8bFJKrtTtdR2VJwvsuSWW1a+m5BH0alma2DjfZ4LZ8W7v8ABmNTM2sBStFN7siK2wAQAAAAAAAAAAAAAAAAa225Xv2Say5npU1btPFPWXel5lo6eJRCorEZNl62pCRQ2lvszDfE8MwEUvxMX4kwBTxM3/cSAFb8TKa3kggK7R7iSiWiFXVNcfmedM1cqiUtCCtGV4pvVnsnh+qv52lCAAAAAAAAAAAAAAAADVp6y70vMtHTxIw1l3peZaOniURrakJF62pCRRNmDLMBGAAAAAGQgEB7iWiRiWgFbSJS0KolLQgph+quRQnh+rHkUIAAAAAAAAAAAAAAAANWGsu9LzLR08SMNZd6XmWjp4lEa2pCRetqQkUTZgyzARgAAAAAMowZQHuJaBGJWAVtolLQqiUtCCmH6seRQnh+pHkUIAAAAAAAAAAAAAAAANWGsu9LzLR08SENZd6XmXjp4lEa2pryNitqa8iibMGWYCAAAAAAZMGQPcSsCUSsArbRGWhVEp6EFcP1I8ihPD9SPJFCAAAAAAAAAAAAAAAADUhrLvS8y0dPEjDWXel5loaeJRKtqa8i9bUhIomzBlmAgYAAGTAAyZRgICkSsCMS0AraRKehVfglPQCuH6keSKE8P1I91eRQyAAAAAAAAAAAAAAAANSPWl3mWhp4kZ5Tlxs/t/gpB6lE62pryL1jXkyjwzAbPNwjIuYuYuB6B5uZuB6Mo8XMpgViVgQiy1MK3ERnoUvkQrPJgbNDqR7sfIoYirJLckjJkAAAAAAAAAAAAAAAAauMja093uy5dn84nmMzblFNNPNPJnNrRdN2ecX1Zfh8S4KVZGvNiVQjKZUemzzcm5mNsCtzFyW2NsCtzNyO2NsC1zKZDbMqYGzFl6cjTjMrGYG65nmC2ppdi95+Ghrqo29mOcnokdHD0dhb5POT3siqgAgAAAAAAAAAAAAAAAAGJxTTTSaeqeaZkAczEdFdtKez+2XvR8HqvuaFXBYhfoU+MJx/Nj6ICj5aVGutaNTwSfkzz6ut8Gr9LPqwWj5PYrfBrfSx6ut8Gt9LPrAKPk/V1vg1vpY2K3wa30s+sAo+T9XW+DW+lnpU6/wav02PqgKPmqeFxD/2mu9KC/Ju0Oi6j/qTjFboe8/m9PudgCiWHw8aatFW3t5t82VAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/9k="
                   alt=""
@@ -530,7 +623,12 @@ const BannerPage = () => {
                 <Box className="text-center mb-3">
                   <Box className="mt-2">
                     <Box className="inline-block">
-                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>ADD TO CART</Box>
+                      <Box
+                        className="text-lg font-bold"
+                        style={{ color: "DodgerBlue" }}
+                      >
+                        ADD TO CART
+                      </Box>
                     </Box>
                   </Box>
                   <Box>AirPods</Box>
@@ -540,7 +638,10 @@ const BannerPage = () => {
             </Box>
 
             <Box>
-              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+              <Link
+                to="/DiscoverNow"
+                className="group relative block border-r border-gray-300"
+              >
                 <img
                   src="https://tse1.mm.bing.net/th?id=OIP.D2pPzFbOEYkicxy4EopZRgHaHa&pid=Api&P=0&h=220"
                   alt=""
@@ -550,7 +651,12 @@ const BannerPage = () => {
                 <Box className="text-center mb-3">
                   <Box className="mt-2">
                     <Box className="inline-block">
-                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$109.95</Box>
+                      <Box
+                        className="text-lg font-bold"
+                        style={{ color: "DodgerBlue" }}
+                      >
+                        $109.95
+                      </Box>
                     </Box>
                   </Box>
                   <Box>Beats Black</Box>
@@ -570,7 +676,12 @@ const BannerPage = () => {
                 <Box className="text-center mb-3">
                   <Box className="mt-2">
                     <Box className="inline-block">
-                      <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$299.95</Box>
+                      <Box
+                        className="text-lg font-bold"
+                        style={{ color: "DodgerBlue" }}
+                      >
+                        $299.95
+                      </Box>
                     </Box>
                   </Box>
                   <Box>August Smart Lock</Box>
@@ -584,6 +695,65 @@ const BannerPage = () => {
       {/** Banner phu 3 - Ngoc*/}
 
       {/** Banner phu 4 - Nghia */}
+      <Box className="mx-auto bg-gray-200 px-4 py-4 space-y-8 sm:px-6 lg:space-y-16 lg:px-8 w-full h-full">
+        <Box
+          className="text-2xl inline-block flex"
+          textTransform="capitalize"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Box className="font-weight-bold">{"today's"}</Box>
+          <Box className="ml-2">Deals</Box>
+        </Box>
+        <Box
+          display="flex"
+          className="gap-6 mt-3 items-start flex-wrap justify-center"
+        >
+          <TabContext value={value}>
+            <Box
+              sx={{
+                width: "auto",
+                maxWidth: { xs: 320, sm: 480, lg: 880 },
+              }}
+            >
+              <TabList
+                onChange={handleChange}
+                aria-label="lab API tabs example"
+                variant="scrollable"
+                scrollButtons
+                allowScrollButtonsMobile
+                sx={{
+                  flexGrow: 1, // Cho phép TabList lấp đầy không gian có sẵn
+                  overflowX: "auto", // Cho phép cuộn ngang khi nội dung tràn ra
+                  "& .Mui-Tabs-scroller": {
+                    // Nhắm mục tiêu trực tiếp vào phần tử cuộn
+                    "& .Mui-ButtonBase-root.Mui-disabled": { opacity: 0.3 }, // Kiểu nút cuộn bị vô hiệu hóa
+                  },
+                }}
+              >
+                <Tab label="TV & Audio" value="1" />
+                <Tab label="Computer & Laptops" value="2" />
+                <Tab label="Caneras & Photos" value="3" />
+                <Tab label="Car Electronics & GPS" value="4" />
+              </TabList>
+            </Box>
+            <Box className="w-full">
+              <TabPanel value="1">
+                <TvAudio />
+              </TabPanel>
+              <TabPanel value="2">
+                <ComputerLaptops />
+              </TabPanel>
+              <TabPanel value="3">
+                <CameraPhotos />
+              </TabPanel>
+              <TabPanel value="4">
+                <CarElectronicsGPS />
+              </TabPanel>
+            </Box>
+          </TabContext>
+        </Box>
+      </Box>
       {/** Banner phu 4 - Nghia */}
 
       {/** Banner phu 5 - Ngoc */}
@@ -612,13 +782,15 @@ const BannerPage = () => {
             </Box>
           </Box>
         </Box>
-        <hr/>
+        <hr />
 
         <Box className="mt-4 mb-3 grid grid-cols-1 gap-2 lg:grid-cols-5">
           <Box className="relative grid grid-cols-1 gap-1 sm:grid-cols-1 lg:col-span-6 lg:grid-cols-5">
-            
             <Box>
-              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+              <Link
+                to="/DiscoverNow"
+                className="group relative block border-r border-gray-300"
+              >
                 <img
                   src="https://i.pinimg.com/564x/65/c5/27/65c5271a77e6c327a6fd90e1b241e81d.jpg"
                   alt=""
@@ -627,7 +799,12 @@ const BannerPage = () => {
                 />
                 <Box className="text-center mb-3">
                   <Box className="inline-block">
-                    <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>ADD TO CART</Box>
+                    <Box
+                      className="text-lg font-bold"
+                      style={{ color: "DodgerBlue" }}
+                    >
+                      ADD TO CART
+                    </Box>
                   </Box>
                   <Box>HP ENVY 7644</Box>
                   <Box>All-in-One Printer</Box>
@@ -636,7 +813,10 @@ const BannerPage = () => {
             </Box>
 
             <Box>
-              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+              <Link
+                to="/DiscoverNow"
+                className="group relative block border-r border-gray-300"
+              >
                 <img
                   src="https://macstores.vn/wp-content/uploads/2017/04/airport-express-gen-2.jpg"
                   alt=""
@@ -645,7 +825,12 @@ const BannerPage = () => {
                 />
                 <Box className="text-center mb-3">
                   <Box className="inline-block">
-                    <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$99.00</Box>
+                    <Box
+                      className="text-lg font-bold"
+                      style={{ color: "DodgerBlue" }}
+                    >
+                      $99.00
+                    </Box>
                   </Box>
                   <Box>AirPort Express</Box>
                   <Box>from Apple</Box>
@@ -654,7 +839,10 @@ const BannerPage = () => {
             </Box>
 
             <Box>
-              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+              <Link
+                to="/DiscoverNow"
+                className="group relative block border-r border-gray-300"
+              >
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLgYQsozBBHRMM8DWs7qVTMgvpugAyG9tguDoynn4wbQ&s"
                   alt=""
@@ -663,7 +851,12 @@ const BannerPage = () => {
                 />
                 <Box className="text-center mb-3">
                   <Box className="inline-block">
-                    <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$99.95</Box>
+                    <Box
+                      className="text-lg font-bold"
+                      style={{ color: "DodgerBlue" }}
+                    >
+                      $99.95
+                    </Box>
                   </Box>
                   <Box>Gear Controller</Box>
                   <Box>Step Into Rift</Box>
@@ -672,7 +865,10 @@ const BannerPage = () => {
             </Box>
 
             <Box>
-              <Link to="/DiscoverNow" className="group relative block border-r border-gray-300">
+              <Link
+                to="/DiscoverNow"
+                className="group relative block border-r border-gray-300"
+              >
                 <img
                   src="https://cdn.shopify.com/s/files/1/0561/0022/5204/products/SONOSBOOST_360x.jpg?v=1630443813"
                   alt=""
@@ -681,7 +877,12 @@ const BannerPage = () => {
                 />
                 <Box className="text-center mb-3">
                   <Box className="inline-block">
-                    <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$99.95</Box>
+                    <Box
+                      className="text-lg font-bold"
+                      style={{ color: "DodgerBlue" }}
+                    >
+                      $99.95
+                    </Box>
                   </Box>
                   <Box>Sonos Boost</Box>
                   <Box>by Mediamarket</Box>
@@ -699,7 +900,12 @@ const BannerPage = () => {
                 />
                 <Box className="text-center mb-3">
                   <Box className="inline-block">
-                    <Box className="text-lg font-bold" style={{ color: 'DodgerBlue' }}>$99.95</Box>
+                    <Box
+                      className="text-lg font-bold"
+                      style={{ color: "DodgerBlue" }}
+                    >
+                      $99.95
+                    </Box>
                   </Box>
                   <Box>Oculus</Box>
                   <Box>Rift + Touch</Box>
@@ -710,12 +916,8 @@ const BannerPage = () => {
         </Box>
       </Box>
       {/** Banner phu 5 - Ngoc */}
-
-      
     </Box>
   );
 };
 
 export default BannerPage;
-
-
