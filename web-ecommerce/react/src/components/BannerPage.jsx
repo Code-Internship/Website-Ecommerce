@@ -5,7 +5,7 @@ import { FaCircleChevronRight } from "react-icons/fa6";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 
 import TvAudio from "./TvAudio";
-import React from "react";
+import { useState } from "react";
 import ComputerLaptops from "./ComputerLaptops";
 import CameraPhotos from "./CameraPhotos";
 import CarElectronicsGPS from "./CarElectronicsGPS";
@@ -13,10 +13,15 @@ import CarElectronicsGPS from "./CarElectronicsGPS";
 import Top20 from "./Top20";
 
 const BannerPage = () => {
-  const [value, setValue] = React.useState("1");
+  const [value, setValue] = useState("1");
+  const [values, setValues] = useState("1");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const handleChanges = (event, newValues) => {
+    setValues(newValues);
   };
 
   return (
@@ -759,64 +764,25 @@ const BannerPage = () => {
       {/** Banner phu 4 - Nghia */}
 
       {/** Banner phu 5 - Ngoc */}
-      <TabContext value={value}>
-        <Container>
-          <Stack
-            alignItems="center"
-            justifyContent="space-between"
-            direction={{ xs: "column", md: "row " }}
-            sx={{ height: "max-content" }}
-            marginTop="1rem"
-          >
-            <Box>
-              <Box className="text-2xl inline-block flex">
-                <Box className="font-bold">Trending</Box>
-                <Box className="ml-2">Items</Box>
-              </Box>
-            </Box>
-            <Box>
-              <TabList
-                onChange={handleChange}
-                aria-label="lab API tabs example"
-                variant="scrollable"
-                scrollButtons
-                allowScrollButtonsMobile
-              >
-                <Tab label="Top 20" value="1" />
-                <Tab label="TV & Audio" value="2" />
-                <Tab label="Cameras & Photos" value="3" />
-                <Tab label="Movie & Music" value="4" />
-              </TabList>
-            </Box>
-          </Stack>
-        </Container>
-        <Box className="w-full mt-2">
-          <TabPanel value="1">
-            <Top20 />
-          </TabPanel>
-        </Box>
-      </TabContext>
-
-      {/* <Box
-        className="mx-auto"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Box
-          display="flex"
-          className="mt-4 mb-3 items-start flex-wrap justify-center inline-block"
-        >
-          <Box className="mt-2 mb-2 text-center text-xl">
-            <TabContext value={value}>
-              <Box className="inline-block flex">
+      <Box>
+        <TabContext value={values}>
+          <Container>
+            <Stack
+              alignItems="center"
+              justifyContent="space-between"
+              direction={{ xs: "column", md: "row " }}
+              sx={{ height: "max-content" }}
+              marginTop="1rem"
+            >
+              <Box>
                 <Box className="text-2xl inline-block flex">
                   <Box className="font-bold">Trending</Box>
                   <Box className="ml-2">Items</Box>
                 </Box>
-
+              </Box>
+              <Box>
                 <TabList
-                  onChange={handleChange}
+                  onChange={handleChanges}
                   aria-label="lab API tabs example"
                   variant="scrollable"
                   scrollButtons
@@ -828,17 +794,24 @@ const BannerPage = () => {
                   <Tab label="Movie & Music" value="4" />
                 </TabList>
               </Box>
-              <hr />
-
-              <Box className="w-full mt-2">
-                <TabPanel value="1">
-                  <Top20 />
-                </TabPanel>
-              </Box>
-            </TabContext>
+            </Stack>
+          </Container>
+          <Box className="w-full mt-2">
+            <TabPanel value="1">
+              <Top20 />
+            </TabPanel>
+            <TabPanel value="2">
+              <TvAudio />
+            </TabPanel>
+            <TabPanel value="3">
+              <Top20 />
+            </TabPanel>
+            <TabPanel value="4">
+              <Top20 />
+            </TabPanel>
           </Box>
-        </Box>
-      </Box> */}
+        </TabContext>
+      </Box>
       {/** Banner phu 5 - Ngoc */}
     </Box>
   );

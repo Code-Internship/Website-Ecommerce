@@ -162,8 +162,7 @@ const TvAudio = () => {
               container
               direction="column"
               justifyContent="flex-start"
-              alignItems="flex"
-              // alignItems="stretch"
+              alignItems="stretch"
             >
               {curvedTVsData.slice(0, 1).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
@@ -177,7 +176,7 @@ const TvAudio = () => {
                         <Box
                           className="inline-block flex"
                           sx={{
-                            width: "400px",
+                            width: "300px",
                             padding: "0.5rem",
                           }}
                         >
