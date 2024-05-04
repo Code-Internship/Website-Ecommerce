@@ -10,6 +10,8 @@ import ComputerLaptops from "./ComputerLaptops";
 import CameraPhotos from "./CameraPhotos";
 import CarElectronicsGPS from "./CarElectronicsGPS";
 
+import Top20 from "./Top20";
+
 const BannerPage = () => {
   const [value, setValue] = React.useState("1");
 
@@ -757,161 +759,37 @@ const BannerPage = () => {
       {/** Banner phu 4 - Nghia */}
 
       {/** Banner phu 5 - Ngoc */}
-      <Box className="mx-auto px-3 py-3">
-        <Box display="flex" justifyContent="space-between">
-          <Box className="mt-2 mb-2 text-left text-2xl">
-            <Box className="inline-block">
-              <Box className="font-bold">Trending</Box>
-            </Box>
-            <Box className="inline-block ml-2">
-              <Box>Items</Box>
-            </Box>
-          </Box>
-          <Box className="mt-2 mb-2 text-right text-xl">
-            <Box className="inline-block ml-5">
-              <Box>Top 20</Box>
-            </Box>
-            <Box className="inline-block ml-5">
-              <Box>TV & Audio</Box>
-            </Box>
-            <Box className="inline-block ml-5">
-              <Box>Cameras & Photos</Box>
-            </Box>
-            <Box className="inline-block ml-5">
-              <Box>Movie and Music</Box>
-            </Box>
-          </Box>
-        </Box>
-        <hr />
-
-        <Box className="mt-4 mb-3 grid grid-cols-1 gap-2 lg:grid-cols-5">
-          <Box className="relative grid grid-cols-1 gap-1 sm:grid-cols-1 lg:col-span-6 lg:grid-cols-5">
-            <Box>
-              <Link
-                to="/DiscoverNow"
-                className="group relative block border-r border-gray-300"
-              >
-                <img
-                  src="https://i.pinimg.com/564x/65/c5/27/65c5271a77e6c327a6fd90e1b241e81d.jpg"
-                  alt=""
-                  className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
-                  style={{ aspectRatio: "4 / 3" }}
-                />
-                <Box className="text-center mb-3">
-                  <Box className="inline-block">
-                    <Box
-                      className="text-lg font-bold"
-                      style={{ color: "DodgerBlue" }}
-                    >
-                      ADD TO CART
-                    </Box>
-                  </Box>
-                  <Box>HP ENVY 7644</Box>
-                  <Box>All-in-One Printer</Box>
+      <Box className="mx-auto" display="flex" justifyContent="center" alignItems="center">
+        <Box display="flex" className="mt-4 mb-3 items-start flex-wrap inline-block">
+          <Box className="mt-2 mb-2 text-center text-xl">
+            <TabContext value={value}>
+              <Box className="inline-block flex">
+                <Box className="text-2xl inline-block flex">
+                  <Box className="font-bold">Trending</Box>
+                  <Box className="ml-2">Items</Box>
                 </Box>
-              </Link>
-            </Box>
-
-            <Box>
-              <Link
-                to="/DiscoverNow"
-                className="group relative block border-r border-gray-300"
-              >
-                <img
-                  src="https://macstores.vn/wp-content/uploads/2017/04/airport-express-gen-2.jpg"
-                  alt=""
-                  className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
-                  style={{ aspectRatio: "4 / 3" }}
-                />
-                <Box className="text-center mb-3">
-                  <Box className="inline-block">
-                    <Box
-                      className="text-lg font-bold"
-                      style={{ color: "DodgerBlue" }}
-                    >
-                      $99.00
-                    </Box>
-                  </Box>
-                  <Box>AirPort Express</Box>
-                  <Box>from Apple</Box>
-                </Box>
-              </Link>
-            </Box>
-
-            <Box>
-              <Link
-                to="/DiscoverNow"
-                className="group relative block border-r border-gray-300"
-              >
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLgYQsozBBHRMM8DWs7qVTMgvpugAyG9tguDoynn4wbQ&s"
-                  alt=""
-                  className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
-                  style={{ aspectRatio: "4 / 3" }}
-                />
-                <Box className="text-center mb-3">
-                  <Box className="inline-block">
-                    <Box
-                      className="text-lg font-bold"
-                      style={{ color: "DodgerBlue" }}
-                    >
-                      $99.95
-                    </Box>
-                  </Box>
-                  <Box>Gear Controller</Box>
-                  <Box>Step Into Rift</Box>
-                </Box>
-              </Link>
-            </Box>
-
-            <Box>
-              <Link
-                to="/DiscoverNow"
-                className="group relative block border-r border-gray-300"
-              >
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0561/0022/5204/products/SONOSBOOST_360x.jpg?v=1630443813"
-                  alt=""
-                  className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
-                  style={{ aspectRatio: "4 / 3" }}
-                />
-                <Box className="text-center mb-3">
-                  <Box className="inline-block">
-                    <Box
-                      className="text-lg font-bold"
-                      style={{ color: "DodgerBlue" }}
-                    >
-                      $99.95
-                    </Box>
-                  </Box>
-                  <Box>Sonos Boost</Box>
-                  <Box>by Mediamarket</Box>
-                </Box>
-              </Link>
-            </Box>
-
-            <Box>
-              <Link to="/DiscoverNow" className="group relative block">
-                <img
-                  src="https://m.media-amazon.com/images/I/418-imFfsGL._SY300_SX300_QL70_FMwebp_.jpg"
-                  alt=""
-                  className="aspect-square w-full object-contain transition duration-500 group-hover:opacity-90"
-                  style={{ aspectRatio: "4 / 3" }}
-                />
-                <Box className="text-center mb-3">
-                  <Box className="inline-block">
-                    <Box
-                      className="text-lg font-bold"
-                      style={{ color: "DodgerBlue" }}
-                    >
-                      $99.95
-                    </Box>
-                  </Box>
-                  <Box>Oculus</Box>
-                  <Box>Rift + Touch</Box>
-                </Box>
-              </Link>
-            </Box>
+                <TabList
+                  onChange={handleChange}
+                  aria-label="lab API tabs example"
+                  variant="scrollable"
+                  scrollButtons
+                  allowScrollButtonsMobile
+                >
+                  
+                  <Tab label="Top 20" value="1" />
+                  <Tab label="TV & Audio" value="2" />
+                  <Tab label="Cameras & Photos" value="3" />
+                  <Tab label="Movie & Music" value="4" />
+                </TabList>
+              </Box>
+              <hr />
+        
+              <Box className="w-full mt-2">
+                <TabPanel value="1">
+                  <Top20 />
+                </TabPanel>
+              </Box>
+            </TabContext>
           </Box>
         </Box>
       </Box>
