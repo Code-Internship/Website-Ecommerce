@@ -453,7 +453,7 @@ const FooterPage = () => {
               direction={{ xs: "column", md: "row " }}
               sx={{ height: "max-content" }}
             >
-              <Box className="flex gap-4">
+              <Box className="flex gap-4 p-2">
                 {/* Visa */}
                 <Box className="shadow shadow-sm bg-white">
                   <svg
@@ -634,8 +634,10 @@ const FooterPage = () => {
                 </Box>
                 {/* Western Union */}
               </Box>
-              <Box>&copy; 2022. Mediamarket. All rights reserved.</Box>
-              <Box className="">
+              <Box className="p-2">
+                &copy; 2022. Mediamarket. All rights reserved.
+              </Box>
+              <Box className="p-2">
                 <form onSubmit={handleSubmit}>
                   <Box className="email-input-field flex gap-3 items-center">
                     <input

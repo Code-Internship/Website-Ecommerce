@@ -1,4 +1,4 @@
-import { Box, Tab, tabsClasses } from "@mui/material";
+import { Box, Container, Stack, Tab, tabsClasses } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaCircleChevronRight } from "react-icons/fa6";
@@ -759,8 +759,54 @@ const BannerPage = () => {
       {/** Banner phu 4 - Nghia */}
 
       {/** Banner phu 5 - Ngoc */}
-      <Box className="mx-auto" display="flex" justifyContent="center" alignItems="center">
-        <Box display="flex" className="mt-4 mb-3 items-start flex-wrap inline-block">
+      <TabContext value={value}>
+        <Container>
+          <Stack
+            alignItems="center"
+            justifyContent="space-between"
+            direction={{ xs: "column", md: "row " }}
+            sx={{ height: "max-content" }}
+            marginTop="1rem"
+          >
+            <Box>
+              <Box className="text-2xl inline-block flex">
+                <Box className="font-bold">Trending</Box>
+                <Box className="ml-2">Items</Box>
+              </Box>
+            </Box>
+            <Box>
+              <TabList
+                onChange={handleChange}
+                aria-label="lab API tabs example"
+                variant="scrollable"
+                scrollButtons
+                allowScrollButtonsMobile
+              >
+                <Tab label="Top 20" value="1" />
+                <Tab label="TV & Audio" value="2" />
+                <Tab label="Cameras & Photos" value="3" />
+                <Tab label="Movie & Music" value="4" />
+              </TabList>
+            </Box>
+          </Stack>
+        </Container>
+        <Box className="w-full mt-2">
+          <TabPanel value="1">
+            <Top20 />
+          </TabPanel>
+        </Box>
+      </TabContext>
+
+      {/* <Box
+        className="mx-auto"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Box
+          display="flex"
+          className="mt-4 mb-3 items-start flex-wrap justify-center inline-block"
+        >
           <Box className="mt-2 mb-2 text-center text-xl">
             <TabContext value={value}>
               <Box className="inline-block flex">
@@ -768,6 +814,7 @@ const BannerPage = () => {
                   <Box className="font-bold">Trending</Box>
                   <Box className="ml-2">Items</Box>
                 </Box>
+
                 <TabList
                   onChange={handleChange}
                   aria-label="lab API tabs example"
@@ -775,7 +822,6 @@ const BannerPage = () => {
                   scrollButtons
                   allowScrollButtonsMobile
                 >
-                  
                   <Tab label="Top 20" value="1" />
                   <Tab label="TV & Audio" value="2" />
                   <Tab label="Cameras & Photos" value="3" />
@@ -783,7 +829,7 @@ const BannerPage = () => {
                 </TabList>
               </Box>
               <hr />
-        
+
               <Box className="w-full mt-2">
                 <TabPanel value="1">
                   <Top20 />
@@ -792,7 +838,7 @@ const BannerPage = () => {
             </TabContext>
           </Box>
         </Box>
-      </Box>
+      </Box> */}
       {/** Banner phu 5 - Ngoc */}
     </Box>
   );
