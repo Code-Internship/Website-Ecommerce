@@ -69,22 +69,10 @@ const TvAudio = () => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-between"
-          alignItems="flex-start"
-          spacing={2}
-        >
-          {/** 3 o ben trai */}
-          <Grid item xs>
-            <Grid
-              container
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-            >
+      <Grid sx={{ flexGrow: 1 }} container spacing={2}>
+        <Grid item xs={12}>
+          <Grid container justifyContent="center" spacing={2}>
+            <Box>
               {curvedTVsData.slice(0, 3).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
                   <Box
@@ -152,18 +140,8 @@ const TvAudio = () => {
                   </Box>
                 </Grid>
               ))}
-            </Grid>
-          </Grid>
-          {/** 3 o ben trai */}
-
-          {/** 1 o giua */}
-          <Grid item xs={5.1}>
-            <Grid
-              container
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="stretch"
-            >
+            </Box>
+            <Box>
               {curvedTVsData.slice(0, 1).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
                   <Box
@@ -176,15 +154,32 @@ const TvAudio = () => {
                         <Box
                           className="inline-block flex"
                           sx={{
-                            width: "300px",
+                            maxWidth: {
+                              xs: "300px",
+                              sx: "400px",
+                              sm: "500px",
+                              lg: "600px",
+                            },
                             padding: "0.5rem",
                           }}
                         >
                           <Box>
                             <CardMedia
                               sx={{
-                                width: "100px",
-                                height: "100px",
+                                maxWidth: {
+                                  xs: "100px",
+                                  sx: "150px",
+                                  sm: "190px",
+                                  lg: "220px",
+                                },
+                                maxHeight: {
+                                  xs: "100px",
+                                  sx: "150px",
+                                  sm: "190px",
+                                  lg: "220px",
+                                },
+                                width: "220px",
+                                height: "220px",
                               }}
                               image={curvedTV.image}
                               alt={curvedTV.title}
@@ -193,9 +188,13 @@ const TvAudio = () => {
 
                           <Box
                             sx={{
-                              // width: "400px",
-                              // height: "300px",
                               paddingLeft: "1rem",
+                              maxWidth: {
+                                xs: "200px",
+                                sx: "220px",
+                                sm: "240px",
+                                lg: "270px",
+                              },
                             }}
                           >
                             <Typography
@@ -210,7 +209,7 @@ const TvAudio = () => {
                             <Box
                               sx={{
                                 display: "flex",
-                                // alignItems: "center",
+                                alignItems: "center",
                                 fontWeight: "bold",
                               }}
                             >
@@ -228,23 +227,14 @@ const TvAudio = () => {
                             </Box>
                           </Box>
                         </Box>
+                        <Box>ssss</Box>
                       </CardActionArea>
                     </Card>
                   </Box>
                 </Grid>
               ))}
-            </Grid>
-          </Grid>
-          {/** 1 o giua */}
-
-          {/** 3 o ben phai */}
-          <Grid item xs>
-            <Grid
-              container
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-            >
+            </Box>
+            <Box>
               {curvedTVsData.slice(3, 6).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
                   <Box
@@ -312,11 +302,10 @@ const TvAudio = () => {
                   </Box>
                 </Grid>
               ))}
-            </Grid>
+            </Box>
           </Grid>
-          {/** 3 o ben phai */}
         </Grid>
-      </Box>
+      </Grid>
     </>
   );
 };

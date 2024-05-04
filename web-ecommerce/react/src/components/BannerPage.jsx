@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Tab, tabsClasses } from "@mui/material";
+import { Box, Container, Stack, Tab } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaCircleChevronRight } from "react-icons/fa6";
