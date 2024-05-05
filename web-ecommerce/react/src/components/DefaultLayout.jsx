@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -208,7 +208,9 @@ const DefaultLayout = () => {
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
-                            <i className="bi bi-bag pr-4"></i>
+                            <Button>
+                              <i className="bi bi-bag pr-4"></i>
+                            </Button>
                             <Box
                               className="position-absolute translate-middle badge rounded-circle bg-danger"
                               style={{
