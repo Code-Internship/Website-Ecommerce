@@ -1,10 +1,11 @@
-import { Box, Button } from "@mui/material";
+import { Box, IconButton, Button  } from "@mui/material";
 import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, Navigate, NavLink, Outlet } from "react-router-dom";
 import { userStateContext } from "../contexts/ContextProvider";
 import axiosClient from "../axios";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const navigation = [
   { name: "HOME", to: "/" },
@@ -166,18 +167,25 @@ const DefaultLayout = () => {
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
-                            <i className="bi bi-arrow-left-right pr-4"></i>
-                            <Box
-                              className="position-absolute translate-middle badge rounded-circle bg-light"
-                              style={{
-                                color: "black",
-                                top: "12px",
-                                left: "8px",
-                                fontSize: "8px",
-                              }}
-                            >
-                              <span>0</span>
-                            </Box>
+                            <span className="MuiBadge-root">
+                              <Button className="" type="button">
+                                <IconButton aria-label="add to shopping cart">
+                                  <AddShoppingCartIcon />
+                                </IconButton>
+                              </Button>
+                              <Box
+                                className="position-absolute translate-middle badge rounded-circle bg-danger"
+                                style={{
+                                  color: "white",
+                                  top: "9px",
+                                  right: "13px",
+                                  fontSize: "10px",
+                                }}
+                                >
+                                <span>4</span>
+                              </Box>
+                            </span>
+                            
                           </Box>
                         </Box>
                       </Box>
@@ -187,18 +195,25 @@ const DefaultLayout = () => {
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
-                            <i className="bi bi-heart pr-4 "></i>
-                            <Box
-                              className="position-absolute translate-middle badge rounded-circle bg-light"
-                              style={{
-                                color: "black",
-                                top: "12px",
-                                left: "8px",
-                                fontSize: "8px",
-                              }}
-                            >
-                              <span>0</span>
-                            </Box>
+                            <span className="MuiBadge-root">
+                              <Button className="" type="button">
+                                <IconButton aria-label="add to shopping cart">
+                                  <AddShoppingCartIcon />
+                                </IconButton>
+                              </Button>
+                              <Box
+                                className="position-absolute translate-middle badge rounded-circle bg-danger"
+                                style={{
+                                  color: "white",
+                                  top: "9px",
+                                  right: "13px",
+                                  fontSize: "10px",
+                                }}
+                                >
+                                <span>4</span>
+                              </Box>
+                            </span>
+                            
                           </Box>
                         </Box>
                       </Box>
@@ -208,20 +223,25 @@ const DefaultLayout = () => {
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
-                            <Button>
-                              <i className="bi bi-bag pr-4"></i>
-                            </Button>
-                            <Box
-                              className="position-absolute translate-middle badge rounded-circle bg-danger"
-                              style={{
-                                color: "white",
-                                top: "12px",
-                                left: "8px",
-                                fontSize: "8px",
-                              }}
-                            >
-                              <span>2</span>
-                            </Box>
+                            <span className="MuiBadge-root">
+                              <Button className="" type="button">
+                                <IconButton aria-label="add to shopping cart">
+                                  <AddShoppingCartIcon />
+                                </IconButton>
+                              </Button>
+                              <Box
+                                className="position-absolute translate-middle badge rounded-circle bg-danger"
+                                style={{
+                                  color: "white",
+                                  top: "9px",
+                                  right: "13px",
+                                  fontSize: "10px",
+                                }}
+                                >
+                                <span>4</span>
+                              </Box>
+                            </span>
+                            
                           </Box>
                         </Box>
                       </Box>

@@ -740,7 +740,7 @@ const BannerPage = () => {
               >
                 <Tab label="TV & Audio" value="1" />
                 <Tab label="Computer & Laptops" value="2" />
-                <Tab label="Caneras & Photos" value="3" />
+                <Tab label="CaMeras & Photos" value="3" />
                 <Tab label="Car Electronics & GPS" value="4" />
               </TabList>
             </Box>
@@ -766,36 +766,34 @@ const BannerPage = () => {
       {/** Banner phu 5 - Ngoc */}
       <Box>
         <TabContext value={values}>
-          <Container>
-            <Stack
-              alignItems="center"
-              justifyContent="space-between"
-              direction={{ xs: "column", md: "row " }}
-              sx={{ height: "max-content" }}
-              marginTop="1rem"
-            >
-              <Box>
-                <Box className="text-2xl inline-block flex">
-                  <Box className="font-bold">Trending</Box>
-                  <Box className="ml-2">Items</Box>
-                </Box>
+          <Stack
+            alignItems="center"
+            justifyContent="space-between"
+            direction={{ xs: "column", md: "row " }}
+            sx={{ height: "max-content" }}
+            marginTop="1rem"
+          >
+            <Box>
+              <Box className="text-2xl inline-block flex ml-3">
+                <Box className="font-bold">Trending</Box>
+                <Box className="ml-2">Items</Box>
               </Box>
-              <Box>
-                <TabList
-                  onChange={handleChanges}
-                  aria-label="lab API tabs example"
-                  variant="scrollable"
-                  scrollButtons
-                  allowScrollButtonsMobile
-                >
-                  <Tab label="Top 20" value="1" />
-                  <Tab label="TV & Audio" value="2" />
-                  <Tab label="Cameras & Photos" value="3" />
-                  <Tab label="Movie & Music" value="4" />
-                </TabList>
-              </Box>
-            </Stack>
-          </Container>
+            </Box>
+            <Box>
+              <TabList
+                onChange={handleChanges}
+                aria-label="lab API tabs example"
+                variant="scrollable"
+                scrollButtons
+                allowScrollButtonsMobile
+              >
+                <Tab label="Top 20" value="1" />
+                <Tab label="TV & Audio" value="2" />
+                <Tab label="Cameras & Photos" value="3" />
+                <Tab label="Movie & Music" value="4" />
+              </TabList>
+            </Box>
+          </Stack>
           <Box className="w-full mt-2">
             <TabPanel value="1">
               <Top20 />
@@ -804,7 +802,7 @@ const BannerPage = () => {
               <TvAudio />
             </TabPanel>
             <TabPanel value="3">
-              <Top20 />
+              <CameraPhotos />
             </TabPanel>
             <TabPanel value="4">
               <Top20 />
