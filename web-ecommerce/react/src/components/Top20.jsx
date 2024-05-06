@@ -60,8 +60,8 @@ const Top20 = () => {
                       <Box className="group relative inline-block">
                         <CardMedia
                           sx={{
-                            width: "128px",
-                            height: "128px",
+                            width: "130px",
+                            height: "100px",
                           }}
                           image={top.image}
                           alt={top.title}
