@@ -1,13 +1,12 @@
-import { Box, IconButton, Button,  } from "@mui/material";
+import { Box,  Button,  } from "@mui/material";
 import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, Navigate, NavLink, Outlet } from "react-router-dom";
 import { userStateContext } from "../contexts/ContextProvider";
 import axiosClient from "../axios";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { FaShoppingCart, FaHeart, FaExchangeAlt } from 'react-icons/fa';
+
 
 const navigation = [
   { name: "HOME", to: "/" },
@@ -23,6 +22,7 @@ const navigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
 
 const DefaultLayout = () => {
   const { currentUser, userToken, setCurrentUser, setUserToken } =
@@ -169,25 +169,10 @@ const DefaultLayout = () => {
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
-                            <span className="MuiBadge-root">
-                              <Button className="" type="button">
-                                <IconButton aria-label="">
-                                  <SwapHorizIcon />
-                                </IconButton>
-                              </Button>
-                              <Box
-                                className="position-absolute translate-middle badge rounded-circle bg-danger"
-                                style={{
-                                  color: "white",
-                                  top: "9px",
-                                  right: "13px",
-                                  fontSize: "10px",
-                                }}
-                                >
-                                <span>4</span>
-                              </Box>
-                            </span>
-                            
+                            <Button className="cursor: pointer;">
+                              <FaExchangeAlt />
+                              <span>0</span>
+                            </Button>
                           </Box>
                         </Box>
                       </Box>
@@ -197,25 +182,10 @@ const DefaultLayout = () => {
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
-                            <span className="MuiBadge-root">
-                              <Button className="" type="button">
-                                <IconButton aria-label="">
-                                  <FavoriteBorderIcon />
-                                </IconButton>
-                              </Button>
-                              <Box
-                                className="position-absolute translate-middle badge rounded-circle bg-danger"
-                                style={{
-                                  color: "white",
-                                  top: "9px",
-                                  right: "13px",
-                                  fontSize: "10px",
-                                }}
-                                >
-                                <span>4</span>
-                              </Box>
-                            </span>
-                            
+                            <Button className="cursor: pointer;">
+                              <FaHeart />
+                              <span>0</span>
+                            </Button>
                           </Box>
                         </Box>
                       </Box>
@@ -225,25 +195,11 @@ const DefaultLayout = () => {
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
-                            <span className="MuiBadge-root">
-                              <Button className="" type="button">
-                                <IconButton aria-label="add to shopping cart">
-                                  <AddShoppingCartIcon />
-                                </IconButton>
-                              </Button>
-                              <Box
-                                className="position-absolute translate-middle badge rounded-circle bg-danger"
-                                style={{
-                                  color: "white",
-                                  top: "9px",
-                                  right: "13px",
-                                  fontSize: "10px",
-                                }}
-                                >
-                                <span>4</span>
-                              </Box>
-                            </span>
-                            
+                            <Button style={{ cursor: "pointer" }}>
+                              <FaShoppingCart />
+                              <span>0</span>
+                              <sup>đ</sup>
+                            </Button>
                           </Box>
                         </Box>
                       </Box>
