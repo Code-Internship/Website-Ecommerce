@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Tab } from "@mui/material";
+import { Box, Button, Container, Stack, Tab } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaCircleChevronRight } from "react-icons/fa6";
@@ -270,6 +270,11 @@ const BannerPage = () => {
                   <Box className="mt-2 text-lg">
                     ecobee3 lite Smart Thermostat
                   </Box>
+                  <Box className="text-4xl font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
                 </Box>
               </Box>
               <hr />
@@ -360,6 +365,11 @@ const BannerPage = () => {
                       <Box>On-Ear Headphones</Box>
                     </Box>
                   </Link>
+                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
                 </Box>
 
                 <Box>
@@ -388,6 +398,11 @@ const BannerPage = () => {
                       <Box>Wireless Speaker</Box>
                     </Box>
                   </Link>
+                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
                 </Box>
 
                 <Box>
@@ -413,6 +428,11 @@ const BannerPage = () => {
                       <Box>With Sport Band</Box>
                     </Box>
                   </Link>
+                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
                 </Box>
 
                 <Box>
@@ -444,6 +464,11 @@ const BannerPage = () => {
                       <Box>MiniDrone</Box>
                     </Box>
                   </Link>
+                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
                 </Box>
 
                 <Box>
@@ -472,6 +497,11 @@ const BannerPage = () => {
                       <Box>Bluetooth Speaker II</Box>
                     </Box>
                   </Link>
+                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
                 </Box>
 
                 <Box>
@@ -500,6 +530,11 @@ const BannerPage = () => {
                       <Box>On-Ear Headphones</Box>
                     </Box>
                   </Link>
+                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
                 </Box>
               </Box>
             </Box>
@@ -549,6 +584,11 @@ const BannerPage = () => {
                   <Box>Personal Photographer</Box>
                 </Box>
               </Link>
+              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
             </Box>
 
             <Box>
@@ -583,6 +623,11 @@ const BannerPage = () => {
                   <Box>Bluetooth Speaker</Box>
                 </Box>
               </Link>
+              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
             </Box>
 
             <Box>
@@ -611,6 +656,11 @@ const BannerPage = () => {
                   <Box>Session Camera</Box>
                 </Box>
               </Link>
+              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
             </Box>
 
             <Box>
@@ -634,7 +684,7 @@ const BannerPage = () => {
                         className="text-lg font-bold"
                         style={{ color: "DodgerBlue" }}
                       >
-                        ADD TO CART
+                        $109.95
                       </Box>
                     </Box>
                   </Box>
@@ -642,6 +692,11 @@ const BannerPage = () => {
                   <Box>White Color</Box>
                 </Box>
               </Link>
+              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
             </Box>
 
             <Box>
@@ -670,6 +725,11 @@ const BannerPage = () => {
                   <Box>Earphones</Box>
                 </Box>
               </Link>
+              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
             </Box>
 
             <Box>
@@ -695,6 +755,11 @@ const BannerPage = () => {
                   <Box>HomeKit Enabled</Box>
                 </Box>
               </Link>
+              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
             </Box>
           </Box>
         </Box>

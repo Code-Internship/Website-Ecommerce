@@ -5,7 +5,7 @@ import BannerPage from "../components/BannerPage";
 const homepage = () => {
   return (
     <Box>
-      <PageComponent title="Home">
+      <PageComponent>
         <BannerPage />
       </PageComponent>
     </Box>

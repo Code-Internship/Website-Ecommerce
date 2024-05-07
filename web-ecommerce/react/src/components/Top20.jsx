@@ -5,6 +5,7 @@ import {
   CardActionArea,
   Typography,
   Box,
+  Button,
 } from "@mui/material";
 
 const Top20 = () => {
@@ -83,10 +84,17 @@ const Top20 = () => {
                           {top.price}
                         </Typography>
                         <div dangerouslySetInnerHTML={{ __html: top.title }} />
+                        
                       </Box>
                     </Box>
                   </CardActionArea>
+                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                    <Button variant="contained" color="warning">
+                      ADD TO CART
+                    </Button>
+                  </Box>
                 </Card>
+                
               </Grid>
             ))}
           </Grid>
