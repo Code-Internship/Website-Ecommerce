@@ -12,6 +12,7 @@ import NotFound from "../pages/NotFound.jsx";
 import PagesPage from "../pages/PagesPage.jsx";
 import ToDaysDealsPage from "../pages/ToDaysDealsPage.jsx";
 import NewArivalsPage from "../pages/NewArivalsPage.jsx";
+import ProductDetail from "../pages/ProductDetail.jsx";
 
 /**
  * router is an object that defines the routes for the application.
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <NotFound />,
+  },
+  {
+    path: "/ProductDetail",
+    element: <ProductDetail />,
   },
 ]);
 

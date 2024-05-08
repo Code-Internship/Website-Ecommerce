@@ -581,7 +581,7 @@ const BannerPage = () => {
           <Box className="relative grid grid-cols-1 gap-1 sm:grid-cols-1 lg:col-span-6 lg:grid-cols-6">
             <Box>
               <Link
-                to="/DiscoverNow"
+                to="/ProductDetail"
                 className="group relative block border-r border-gray-300"
               >
                 <img
