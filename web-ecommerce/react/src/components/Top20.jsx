@@ -7,6 +7,7 @@ import {
   Box,
   Button,
 } from "@mui/material";
+import { useState } from "react";
 
 const Top20 = () => {
   const topData = [
@@ -48,6 +49,20 @@ const Top20 = () => {
     // thêm id, ảnh, ... ở đây
   ];
 
+  const handleAddToCart = (product) => {
+    console.log("Adding product to cart:", product);
+  };
+
+  const [cart, setCart] = useState([]);
+
+  const onAddtoCartHandler = (product) => {
+    if (cart.indexOf(product) !== -1) return null;
+    const arr = [...cart];
+    product.amount = 1;
+    arr.push(product);
+    setCart([...arr]);
+  };
+
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -84,17 +99,33 @@ const Top20 = () => {
                           {top.price}
                         </Typography>
                         <div dangerouslySetInnerHTML={{ __html: top.title }} />
-                        
                       </Box>
                     </Box>
                   </CardActionArea>
-                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
-                    <Button variant="contained" color="warning">
+                  <Box
+                    className="text-4xl text-center font-bold"
+                    style={{ border: "50% solid black" }}
+                  >
+                    {cart.indexOf(top) !== -1 ? (
+                      <span>Sản phẩm đã có trong giỏ</span>
+                    ) : (
+                      <Button
+                        variant="contained"
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
+                    )}
+                    {/* <Button
+                      variant="contained"
+                      color="warning"
+                      onClick={() => handleAddToCart(top)}
+                    >
                       ADD TO CART
-                    </Button>
+                    </Button> */}
                   </Box>
                 </Card>
-                
               </Grid>
             ))}
           </Grid>

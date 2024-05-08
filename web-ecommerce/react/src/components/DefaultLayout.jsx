@@ -1,12 +1,11 @@
-import { Box,  Button,  } from "@mui/material";
-import { Fragment, useState } from "react";
+import { Box, Button } from "@mui/material";
+import { Fragment, useEffect, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, Navigate, NavLink, Outlet } from "react-router-dom";
 import { userStateContext } from "../contexts/ContextProvider";
 import axiosClient from "../axios";
-import { FaShoppingCart, FaHeart, FaExchangeAlt } from 'react-icons/fa';
-
+import { FaShoppingCart, FaHeart, FaExchangeAlt } from "react-icons/fa";
 
 const navigation = [
   { name: "HOME", to: "/" },
@@ -22,7 +21,6 @@ const navigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-
 
 const DefaultLayout = () => {
   const { currentUser, userToken, setCurrentUser, setUserToken } =
@@ -46,15 +44,80 @@ const DefaultLayout = () => {
     });
   };
 
+  {
+    /** gio hang */
+  }
+  const [selectedCategory, setCategory] = useState(null);
+  const [isShowModal, setShowModal] = useState(false);
+  const [selectedProduct, setProduct] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [isShowCart, setShowCart] = useState(false);
+
+  const onClickCategoryHandler = (cat_id) => {
+    setCategory(cat_id);
+  };
+
+  const onClickProductHandler = (product) => {
+    setProduct(product);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const onAddtoCartHandler = (product) => {
+    if (cart.indexOf(product) !== -1) return null;
+    const arr = [...cart];
+    product.amount = 1;
+    arr.push(product);
+    setCart([...arr]);
+  };
+
+  useEffect(() => {
+    console.log(cart);
+  });
+
+  {
+    /** icon gio hang */
+  }
+  const onShowCartHandler = () => {
+    setShowCart(true);
+  };
+  {
+    /** icon gio hang */
+  }
+
+  //   console.log(selectedCategory);
+  // let filteredProducts = [...products];
+  // if (selectedCategory != null) {
+  //   filteredProducts = products.filter(
+  //     (product) => product.category_id == selectedCategory
+  //   );
+  // }
+  {
+    /** gio hang */
+  }
+
   return (
     <Box>
       <Box className="min-h-full max-w-full">
-        <Disclosure as="nav" className="bg-gray-100" style={{ position : "fixed", top : "0px", left : "0px", right : "0px", zIndex : 1000 }}>
+        <Disclosure
+          as="nav"
+          className="bg-gray-100"
+          style={{
+            position: "fixed",
+            top: "0px",
+            left: "0px",
+            right: "0px",
+            zIndex: 1000,
+          }}
+        >
           {({ open }) => (
             <Box>
               <Box>
                 {/** Nav Link */}
-                <NavLink className="text-dark navbar navbar-expand-lg navbar-light bg-light" >
+                <NavLink className="text-dark navbar navbar-expand-lg navbar-light bg-light">
                   <Box className="navbar-collapse">
                     {/** nut ben phai */}
                     <Box className="mr-auto d-flex align-items-center">
@@ -195,10 +258,14 @@ const DefaultLayout = () => {
                       <Box>
                         <Box style={{ position: "relative" }}>
                           <Box>
-                            <Button style={{ cursor: "pointer" }}>
+                            <Button
+                              style={{ cursor: "pointer" }}
+                              onClick={onShowCartHandler}
+                            >
                               <FaShoppingCart />
-                              <span>0</span>
-                              <sup>đ</sup>
+                              <span className="relative mt-[-5px]">
+                                <sup>{cart.lenght}</sup>
+                              </span>
                             </Button>
                           </Box>
                         </Box>

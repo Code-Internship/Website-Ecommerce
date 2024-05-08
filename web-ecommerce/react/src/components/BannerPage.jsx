@@ -270,7 +270,10 @@ const BannerPage = () => {
                   <Box className="mt-2 text-lg">
                     ecobee3 lite Smart Thermostat
                   </Box>
-                  <Box className="text-4xl font-bold" style={{ border: '50% solid black' }}>
+                  <Box
+                    className="text-4xl font-bold"
+                    style={{ border: "50% solid black" }}
+                  >
                     <Button variant="contained" color="warning">
                       ADD TO CART
                     </Button>
@@ -365,7 +368,10 @@ const BannerPage = () => {
                       <Box>On-Ear Headphones</Box>
                     </Box>
                   </Link>
-                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                  <Box
+                    className="text-4xl text-center font-bold"
+                    style={{ border: "50% solid black" }}
+                  >
                     <Button variant="contained" color="warning">
                       ADD TO CART
                     </Button>
@@ -398,7 +404,10 @@ const BannerPage = () => {
                       <Box>Wireless Speaker</Box>
                     </Box>
                   </Link>
-                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                  <Box
+                    className="text-4xl text-center font-bold"
+                    style={{ border: "50% solid black" }}
+                  >
                     <Button variant="contained" color="warning">
                       ADD TO CART
                     </Button>
@@ -428,7 +437,10 @@ const BannerPage = () => {
                       <Box>With Sport Band</Box>
                     </Box>
                   </Link>
-                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                  <Box
+                    className="text-4xl text-center font-bold"
+                    style={{ border: "50% solid black" }}
+                  >
                     <Button variant="contained" color="warning">
                       ADD TO CART
                     </Button>
@@ -464,7 +476,10 @@ const BannerPage = () => {
                       <Box>MiniDrone</Box>
                     </Box>
                   </Link>
-                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                  <Box
+                    className="text-4xl text-center font-bold"
+                    style={{ border: "50% solid black" }}
+                  >
                     <Button variant="contained" color="warning">
                       ADD TO CART
                     </Button>
@@ -497,7 +512,10 @@ const BannerPage = () => {
                       <Box>Bluetooth Speaker II</Box>
                     </Box>
                   </Link>
-                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                  <Box
+                    className="text-4xl text-center font-bold"
+                    style={{ border: "50% solid black" }}
+                  >
                     <Button variant="contained" color="warning">
                       ADD TO CART
                     </Button>
@@ -530,7 +548,10 @@ const BannerPage = () => {
                       <Box>On-Ear Headphones</Box>
                     </Box>
                   </Link>
-                  <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
+                  <Box
+                    className="text-4xl text-center font-bold"
+                    style={{ border: "50% solid black" }}
+                  >
                     <Button variant="contained" color="warning">
                       ADD TO CART
                     </Button>
@@ -584,11 +605,14 @@ const BannerPage = () => {
                   <Box>Personal Photographer</Box>
                 </Box>
               </Link>
-              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
-                  </Box>
+              <Box
+                className="text-4xl text-center font-bold"
+                style={{ border: "50% solid black" }}
+              >
+                <Button variant="contained" color="warning">
+                  ADD TO CART
+                </Button>
+              </Box>
             </Box>
 
             <Box>
@@ -623,11 +647,14 @@ const BannerPage = () => {
                   <Box>Bluetooth Speaker</Box>
                 </Box>
               </Link>
-              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
-                  </Box>
+              <Box
+                className="text-4xl text-center font-bold"
+                style={{ border: "50% solid black" }}
+              >
+                <Button variant="contained" color="warning">
+                  ADD TO CART
+                </Button>
+              </Box>
             </Box>
 
             <Box>
@@ -656,11 +683,14 @@ const BannerPage = () => {
                   <Box>Session Camera</Box>
                 </Box>
               </Link>
-              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
-                  </Box>
+              <Box
+                className="text-4xl text-center font-bold"
+                style={{ border: "50% solid black" }}
+              >
+                <Button variant="contained" color="warning">
+                  ADD TO CART
+                </Button>
+              </Box>
             </Box>
 
             <Box>
@@ -692,11 +722,14 @@ const BannerPage = () => {
                   <Box>White Color</Box>
                 </Box>
               </Link>
-              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
-                  </Box>
+              <Box
+                className="text-4xl text-center font-bold"
+                style={{ border: "50% solid black" }}
+              >
+                <Button variant="contained" color="warning">
+                  ADD TO CART
+                </Button>
+              </Box>
             </Box>
 
             <Box>
@@ -725,11 +758,14 @@ const BannerPage = () => {
                   <Box>Earphones</Box>
                 </Box>
               </Link>
-              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
-                  </Box>
+              <Box
+                className="text-4xl text-center font-bold"
+                style={{ border: "50% solid black" }}
+              >
+                <Button variant="contained" color="warning">
+                  ADD TO CART
+                </Button>
+              </Box>
             </Box>
 
             <Box>
@@ -755,11 +791,14 @@ const BannerPage = () => {
                   <Box>HomeKit Enabled</Box>
                 </Box>
               </Link>
-              <Box className="text-4xl text-center font-bold" style={{ border: '50% solid black' }}>
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
-                  </Box>
+              <Box
+                className="text-4xl text-center font-bold"
+                style={{ border: "50% solid black" }}
+              >
+                <Button variant="contained" color="warning">
+                  ADD TO CART
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Box>
