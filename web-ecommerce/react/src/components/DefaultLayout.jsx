@@ -5,7 +5,7 @@ import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, Navigate, NavLink, Outlet } from "react-router-dom";
 import { userStateContext } from "../contexts/ContextProvider";
 import axiosClient from "../axios";
-import { FaShoppingCart, FaHeart, FaExchangeAlt } from "react-icons/fa";
+import { FaShoppingBag , FaHeart, FaExchangeAlt } from "react-icons/fa";
 
 const navigation = [
   { name: "HOME", to: "/" },
@@ -262,7 +262,7 @@ const DefaultLayout = () => {
                               style={{ cursor: "pointer" }}
                               onClick={onShowCartHandler}
                             >
-                              <FaShoppingCart />
+                              <FaShoppingBag  />
                               <span className="relative mt-[-5px]">
                                 <sup>{cart.lenght}</sup>
                               </span>
