@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_payment extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'orderID',
+        'prodID',
+        'quantity',
+        'unitPrice',
+        'subTotal',
+    ];
 }

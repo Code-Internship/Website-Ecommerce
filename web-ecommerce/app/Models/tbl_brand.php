@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_brand extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'subcatID',
+        'brandName',
+    ];
 }

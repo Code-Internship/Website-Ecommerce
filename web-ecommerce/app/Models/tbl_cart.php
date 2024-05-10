@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_cart extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'cusID',
+        'prodID',
+        'quantity',
+        'price',
+    ];
 }

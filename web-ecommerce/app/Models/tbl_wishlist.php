@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_wishlist extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'cusID',
+        'prodID',
+    ];
 }

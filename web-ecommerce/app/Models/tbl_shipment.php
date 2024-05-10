@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_shipment extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'cusID',
+        'shipmentDate',
+        'shipmentAddress',
+        'shipmentCity',
+        'shipmentState',
+        'zipcode',
+    ];
 }

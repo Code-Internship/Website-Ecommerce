@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_gallery extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'prodID',
+        'galName',
+        'galImage',
+    ];
 }

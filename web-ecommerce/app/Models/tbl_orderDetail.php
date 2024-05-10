@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_orderDetail extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'cusID',
+        'paymentDate',
+        'paymentMethod',
+        'totalAmount',
+    ];
 }
