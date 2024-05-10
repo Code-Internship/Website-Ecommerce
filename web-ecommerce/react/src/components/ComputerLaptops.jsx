@@ -7,6 +7,7 @@ import {
   Box,
   Stack,
   Rating,
+  Button,
 } from "@mui/material";
 
 const ComputerLaptops = () => {
@@ -15,7 +16,7 @@ const ComputerLaptops = () => {
       id: 1,
       title: "High-Performance Gaming Laptop",
       image:
-        "https://th.bing.com/th/id/OIF.WYOdUC9Z29FVbVUDNlnhHQ?rs=1&pid=ImgDetMain", // Replace with generic laptop image
+        "https://th.bing.com/th/id/OIP.PmE7-1SrCg59kTDp8AHsAAHaFQ?rs=1&pid=ImgDetMain", // Replace with generic laptop image
       price: "$1,999.99",
       processor: "Intel Core i7-12700H", // Add additional specs
       graphics_card: "NVIDIA RTX 3070 Ti",
@@ -91,24 +92,17 @@ const ComputerLaptops = () => {
     },
   ];
 
+  const handleAddToCart = (product) => {
+    console.log("Adding product to cart:", product);
+  };
+
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-between"
-          alignItems="flex-start"
-          spacing={2}
-        >
-          {/** 3 o ben trai */}
-          <Grid item xs>
-            <Grid
-              container
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-            >
+      <Grid sx={{ flexGrow: 1 }} container spacing={2}>
+        <Grid item xs={12}>
+          <Grid container justifyContent="center" spacing={2}>
+            {/** 3 o ben trai */}
+            <Box>
               {curvedTVsData.slice(0, 3).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
                   <Box
@@ -149,11 +143,7 @@ const ComputerLaptops = () => {
                             >
                               {curvedTV.price}
                             </Typography>
-                            <Box>{"- " + curvedTV.title}</Box>
-                            <Box>{"- " + curvedTV.processor}</Box>
-                            <Box>{"- " + curvedTV.graphics_card}</Box>
-                            <Box>{"- " + curvedTV.ram}</Box>
-                            <Box>{"- " + curvedTV.storage}</Box>
+                            <Box>{curvedTV.title}</Box>
                             <Box
                               sx={{
                                 display: "flex",
@@ -180,18 +170,11 @@ const ComputerLaptops = () => {
                   </Box>
                 </Grid>
               ))}
-            </Grid>
-          </Grid>
-          {/** 3 o ben trai */}
+            </Box>
+            {/** 3 o ben trai */}
 
-          {/** 1 o giua */}
-          <Grid item xs={5.1}>
-            <Grid
-              container
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="stretch"
-            >
+            {/** 1 o giua */}
+            <Box>
               {curvedTVsData.slice(0, 1).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
                   <Box
@@ -204,15 +187,32 @@ const ComputerLaptops = () => {
                         <Box
                           className="inline-block flex"
                           sx={{
-                            width: "400px",
+                            maxWidth: {
+                              xs: "300px",
+                              sx: "300px",
+                              sm: "400px",
+                              lg: "500px",
+                            },
                             padding: "0.5rem",
                           }}
                         >
                           <Box>
                             <CardMedia
                               sx={{
-                                width: "100px",
-                                height: "100px",
+                                maxWidth: {
+                                  xs: "100px",
+                                  sx: "150px",
+                                  sm: "190px",
+                                  lg: "220px",
+                                },
+                                maxHeight: {
+                                  xs: "100px",
+                                  sx: "150px",
+                                  sm: "190px",
+                                  lg: "220px",
+                                },
+                                width: "220px",
+                                height: "220px",
                               }}
                               image={curvedTV.image}
                               alt={curvedTV.title}
@@ -222,6 +222,12 @@ const ComputerLaptops = () => {
                           <Box
                             sx={{
                               paddingLeft: "1rem",
+                              maxWidth: {
+                                xs: "200px",
+                                sx: "220px",
+                                sm: "230px",
+                                lg: "250px",
+                              },
                             }}
                           >
                             <Typography
@@ -258,23 +264,28 @@ const ComputerLaptops = () => {
                             </Box>
                           </Box>
                         </Box>
+                        <Box
+                          className="text-4xl text-center font-bold mb-3"
+                          style={{ border: "50% solid black" }}
+                        >
+                          <Button
+                            variant="contained"
+                            color="warning"
+                            onClick={() => handleAddToCart(top)}
+                          >
+                            ADD TO CART
+                          </Button>
+                        </Box>
                       </CardActionArea>
                     </Card>
                   </Box>
                 </Grid>
               ))}
-            </Grid>
-          </Grid>
-          {/** 1 o giua */}
+            </Box>
+            {/** 1 o giua */}
 
-          {/** 3 o ben phai */}
-          <Grid item xs>
-            <Grid
-              container
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-            >
+            {/** 3 o ben phai */}
+            <Box>
               {curvedTVsData.slice(3, 6).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
                   <Box
@@ -315,11 +326,7 @@ const ComputerLaptops = () => {
                             >
                               {curvedTV.price}
                             </Typography>
-                            <Box>{"- " + curvedTV.title}</Box>
-                            <Box>{"- " + curvedTV.processor}</Box>
-                            <Box>{"- " + curvedTV.graphics_card}</Box>
-                            <Box>{"- " + curvedTV.ram}</Box>
-                            <Box>{"- " + curvedTV.storage}</Box>
+                            <Box>{curvedTV.title}</Box>
                             <Box
                               sx={{
                                 display: "flex",
@@ -346,11 +353,11 @@ const ComputerLaptops = () => {
                   </Box>
                 </Grid>
               ))}
-            </Grid>
+            </Box>
+            {/** 3 o ben phai */}
           </Grid>
-          {/** 3 o ben phai */}
         </Grid>
-      </Box>
+      </Grid>
     </>
   );
 };

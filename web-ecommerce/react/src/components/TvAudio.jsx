@@ -7,6 +7,7 @@ import {
   Box,
   Stack,
   Rating,
+  Button,
 } from "@mui/material";
 
 const TvAudio = () => {
@@ -67,11 +68,16 @@ const TvAudio = () => {
     // Add more curved TV data as needed
   ];
 
+  const handleAddToCart = (product) => {
+    console.log("Adding product to cart:", product);
+  };
+
   return (
     <>
       <Grid sx={{ flexGrow: 1 }} container spacing={2}>
         <Grid item xs={12}>
           <Grid container justifyContent="center" spacing={2}>
+            {/** 3 o ben trai */}
             <Box>
               {curvedTVsData.slice(0, 3).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
@@ -141,6 +147,9 @@ const TvAudio = () => {
                 </Grid>
               ))}
             </Box>
+            {/** 3 o ben trai */}
+
+            {/** 1 o giua */}
             <Box>
               {curvedTVsData.slice(0, 1).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
@@ -156,9 +165,9 @@ const TvAudio = () => {
                           sx={{
                             maxWidth: {
                               xs: "300px",
-                              sx: "400px",
-                              sm: "500px",
-                              lg: "600px",
+                              sx: "300px",
+                              sm: "400px",
+                              lg: "500px",
                             },
                             padding: "0.5rem",
                           }}
@@ -192,8 +201,8 @@ const TvAudio = () => {
                               maxWidth: {
                                 xs: "200px",
                                 sx: "220px",
-                                sm: "240px",
-                                lg: "270px",
+                                sm: "230px",
+                                lg: "250px",
                               },
                             }}
                           >
@@ -205,7 +214,7 @@ const TvAudio = () => {
                             >
                               {curvedTV.price}
                             </Typography>
-                            <Box>{curvedTV.title}</Box>
+                            <Box>{"- " + curvedTV.title}</Box>
                             <Box
                               sx={{
                                 display: "flex",
@@ -227,13 +236,27 @@ const TvAudio = () => {
                             </Box>
                           </Box>
                         </Box>
-                        <Box>ssss</Box>
+                        <Box
+                          className="text-4xl text-center font-bold mb-3"
+                          style={{ border: "50% solid black" }}
+                        >
+                          <Button
+                            variant="contained"
+                            color="warning"
+                            onClick={() => handleAddToCart(top)}
+                          >
+                            ADD TO CART
+                          </Button>
+                        </Box>
                       </CardActionArea>
                     </Card>
                   </Box>
                 </Grid>
               ))}
             </Box>
+            {/** 1 o giua */}
+
+            {/** 3 o ben phai */}
             <Box>
               {curvedTVsData.slice(3, 6).map((curvedTV) => (
                 <Grid item key={curvedTV.id}>
@@ -303,6 +326,7 @@ const TvAudio = () => {
                 </Grid>
               ))}
             </Box>
+            {/** 3 o ben phai */}
           </Grid>
         </Grid>
       </Grid>
