@@ -15,4 +15,15 @@ class tbl_payment extends Model
         'unitPrice',
         'subTotal',
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(tbl_order::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

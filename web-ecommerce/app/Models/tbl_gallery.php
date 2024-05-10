@@ -13,4 +13,10 @@ class tbl_gallery extends Model
         'galName',
         'galImage',
     ];
+
+    public function products()
+    {
+        return $this->belongsTo(tbl_product::class);
+    }
+
 }

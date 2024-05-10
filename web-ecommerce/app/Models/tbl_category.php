@@ -11,4 +11,10 @@ class tbl_category extends Model
     protected $fillable = [
         'catName',
     ];
+
+    public function subcategories()
+    {
+        return $this->hasMany(tbl_subCategory::class);
+    }
+
 }

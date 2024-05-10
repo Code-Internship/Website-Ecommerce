@@ -14,4 +14,15 @@ class tbl_cart extends Model
         'quantity',
         'price',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsTo(tbl_product::class);
+    }
+
 }

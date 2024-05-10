@@ -14,4 +14,15 @@ class tbl_orderDetail extends Model
         'paymentMethod',
         'totalAmount',
     ];
+
+    public function products()
+    {
+        return $this->belongsTo(tbl_product::class);
+    }
+
+    public function orders()
+    {
+        return $this->belongsTo(tbl_order::class);
+    }
+
 }

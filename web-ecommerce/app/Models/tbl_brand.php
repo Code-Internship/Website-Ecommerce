@@ -13,4 +13,10 @@ class tbl_brand extends Model
         'subcatID',
         'brandName',
     ];
+
+    public function subcategories()
+    {
+        return $this->belongsTo(tbl_subCategory::class);
+    }
+
 }

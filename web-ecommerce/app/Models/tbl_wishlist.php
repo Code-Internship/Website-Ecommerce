@@ -12,4 +12,15 @@ class tbl_wishlist extends Model
         'cusID',
         'prodID',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsTo(tbl_product::class);
+    }
+
 }
