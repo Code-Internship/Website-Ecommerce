@@ -1,8 +1,9 @@
-import { Box, Button, Container, Stack, Tab } from "@mui/material";
+import { AppBar, Box, Button, Container, IconButton, Stack, Tab, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import { FaCircleChevronRight } from "react-icons/fa6";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { FaTimes } from "react-icons/fa";
 
 import TvAudio from "./TvAudio";
 import { useState } from "react";
@@ -25,6 +26,7 @@ const BannerPage = () => {
   };
 
   return (
+    
     <Box>
       {/** Banner chinh - Nghia*/}
       <Box>
@@ -274,9 +276,23 @@ const BannerPage = () => {
                     className="text-4xl font-bold"
                     style={{ border: "50% solid black" }}
                   >
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
+                    <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
                   </Box>
                 </Box>
               </Box>
@@ -372,9 +388,23 @@ const BannerPage = () => {
                     className="text-4xl text-center font-bold"
                     style={{ border: "50% solid black" }}
                   >
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
+                    <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
                   </Box>
                 </Box>
 
@@ -408,9 +438,23 @@ const BannerPage = () => {
                     className="text-4xl text-center font-bold"
                     style={{ border: "50% solid black" }}
                   >
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
+                    <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
                   </Box>
                 </Box>
 
@@ -441,9 +485,23 @@ const BannerPage = () => {
                     className="text-4xl text-center font-bold"
                     style={{ border: "50% solid black" }}
                   >
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
+                    <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
                   </Box>
                 </Box>
 
@@ -480,9 +538,23 @@ const BannerPage = () => {
                     className="text-4xl text-center font-bold"
                     style={{ border: "50% solid black" }}
                   >
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
+                    <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
                   </Box>
                 </Box>
 
@@ -516,9 +588,23 @@ const BannerPage = () => {
                     className="text-4xl text-center font-bold"
                     style={{ border: "50% solid black" }}
                   >
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
+                    <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
                   </Box>
                 </Box>
 
@@ -552,9 +638,23 @@ const BannerPage = () => {
                     className="text-4xl text-center font-bold"
                     style={{ border: "50% solid black" }}
                   >
-                    <Button variant="contained" color="warning">
-                      ADD TO CART
-                    </Button>
+                    <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
                   </Box>
                 </Box>
               </Box>
@@ -609,9 +709,23 @@ const BannerPage = () => {
                 className="text-4xl text-center font-bold"
                 style={{ border: "50% solid black" }}
               >
-                <Button variant="contained" color="warning">
-                  ADD TO CART
-                </Button>
+                <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
               </Box>
             </Box>
 
@@ -651,9 +765,23 @@ const BannerPage = () => {
                 className="text-4xl text-center font-bold"
                 style={{ border: "50% solid black" }}
               >
-                <Button variant="contained" color="warning">
-                  ADD TO CART
-                </Button>
+                <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
               </Box>
             </Box>
 
@@ -687,9 +815,23 @@ const BannerPage = () => {
                 className="text-4xl text-center font-bold"
                 style={{ border: "50% solid black" }}
               >
-                <Button variant="contained" color="warning">
-                  ADD TO CART
-                </Button>
+                <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
               </Box>
             </Box>
 
@@ -726,9 +868,23 @@ const BannerPage = () => {
                 className="text-4xl text-center font-bold"
                 style={{ border: "50% solid black" }}
               >
-                <Button variant="contained" color="warning">
-                  ADD TO CART
-                </Button>
+                <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
               </Box>
             </Box>
 
@@ -762,9 +918,23 @@ const BannerPage = () => {
                 className="text-4xl text-center font-bold"
                 style={{ border: "50% solid black" }}
               >
-                <Button variant="contained" color="warning">
-                  ADD TO CART
-                </Button>
+                <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
               </Box>
             </Box>
 
@@ -795,9 +965,23 @@ const BannerPage = () => {
                 className="text-4xl text-center font-bold"
                 style={{ border: "50% solid black" }}
               >
-                <Button variant="contained" color="warning">
-                  ADD TO CART
-                </Button>
+                <Button
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
               </Box>
             </Box>
           </Box>
@@ -915,7 +1099,66 @@ const BannerPage = () => {
         </TabContext>
       </Box>
       {/** Banner phu 5 - Ngoc */}
+      
+      <Box className="cart" style={{
+        width: "50%",
+        margin: "auto",
+        textAlign: "center",
+        paddingTop: "30px",        
+        // position: "fixed",
+        height: "50vh",
+        width: "400px",
+        right: "0",
+        top: "0",
+        backgroundColor: "#f5c7c7",
+        padding: "12px 30px",
+        overflowY: "scroll",
+        right: "-100%",
+        transition: "all 0.3s ease",
+      }}>
+      <FaTimes />
+        <h2 style={{ marginBottom: "20px", }}>Cart</h2>
+        <form action="">
+          <table>
+            <thead>
+              <tr>
+                <th>Sản phẩm</th>
+                <th>Giá</th>
+                <th>Sl</th>
+                <th>Chọn</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{ display: 'flex', alignItems: 'center', borderBottom: "1px solid #ddd", padding: "12px 0", textAlign: "right"}}>
+                  <img style={{ width: '70px' }} src="https://i.pinimg.com/564x/65/c5/27/65c5271a77e6c327a6fd90e1b241e81d.jpg" />
+                  HP ENVY 7644
+                </td>
+                <td>
+                  <p>
+                    <span>199.99</span>
+                    <sup>$</sup>
+                  </p>
+                </td>
+                <td>
+                  <input style={{ width: '30px', outline: 'none' }} type="number" value="1" min="1" />
+                </td>
+                <td style={{ cursor: 'pointer' }}>Xóa</td>
+              </tr>
+              
+            </tbody>
+          </table>
+          <div className="price-total">
+            <p style={{ fontWeight: 'bold' }}>
+              Tổng tiền: <span>0</span>
+              <sup>đ</sup>
+            </p>
+          </div>
+          <button>Đến Giỏ Hàng</button>
+        </form>
+      </Box>
     </Box>
+    
   );
 };
 

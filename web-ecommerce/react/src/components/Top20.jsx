@@ -102,28 +102,28 @@ const Top20 = () => {
                       </Box>
                     </Box>
                   </CardActionArea>
-                  <Box
-                    className="text-4xl text-center font-bold"
-                    style={{ border: "50% solid black" }}
-                  >
+                  <Box className="text-4xl text-center font-bold" style={{ border: "50% solid black" }}>
                     {cart.indexOf(top) !== -1 ? (
                       <span>Sản phẩm đã có trong giỏ</span>
                     ) : (
                       <Button
                         variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
                         color="warning"
                         onClick={() => onAddtoCartHandler(top)}
                       >
                         Add to Cart
                       </Button>
                     )}
-                    {/* <Button
-                      variant="contained"
-                      color="warning"
-                      onClick={() => handleAddToCart(top)}
-                    >
-                      ADD TO CART
-                    </Button> */}
                   </Box>
                 </Card>
               </Grid>

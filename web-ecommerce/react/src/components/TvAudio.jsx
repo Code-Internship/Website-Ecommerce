@@ -236,19 +236,30 @@ const TvAudio = () => {
                             </Box>
                           </Box>
                         </Box>
-                        <Box
+                        
+                      </CardActionArea>
+                      <Box
                           className="text-4xl text-center font-bold mb-3"
                           style={{ border: "50% solid black" }}
                         >
                           <Button
-                            variant="contained"
-                            color="warning"
-                            onClick={() => handleAddToCart(top)}
-                          >
-                            ADD TO CART
-                          </Button>
+                        variant="contained"
+                        style={{
+                          border: "50% solid black",
+                          transition: 'all 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'green';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = '';
+                        }}
+                        color="warning"
+                        onClick={() => onAddtoCartHandler(top)}
+                      >
+                        Add to Cart
+                      </Button>
                         </Box>
-                      </CardActionArea>
                     </Card>
                   </Box>
                 </Grid>

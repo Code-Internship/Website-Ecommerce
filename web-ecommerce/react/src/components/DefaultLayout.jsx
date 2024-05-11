@@ -1,12 +1,27 @@
 import { Box, Button } from "@mui/material";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, useRef  } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, Navigate, NavLink, Outlet } from "react-router-dom";
 import { userStateContext } from "../contexts/ContextProvider";
 import axiosClient from "../axios";
-import { FaShoppingBag , FaHeart, FaExchangeAlt } from "react-icons/fa";
-
+import { FaShoppingBag , FaHeart, FaExchangeAlt, FaTimes  } from "react-icons/fa";
+// import MuiAppBar from '@mui/material/AppBar';
+// import Toolbar from '@mui/material/Toolbar';
+// import { styled, useTheme } from '@mui/material/styles';
+// import IconButton from '@mui/material/IconButton';
+// import Drawer from '@mui/material/Drawer';
+// import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+// import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+// import ListItem from '@mui/material/ListItem';
+// import ListItemButton from '@mui/material/ListItemButton';
+// import ListItemIcon from '@mui/material/ListItemIcon';
+// import ListItemText from '@mui/material/ListItemText';
+// import InboxIcon from '@mui/icons-material/MoveToInbox';
+// import MailIcon from '@mui/icons-material/Mail';
+// import List from '@mui/material/List';
+// import Divider from '@mui/material/Divider';
+import * as React from 'react';
 const navigation = [
   { name: "HOME", to: "/" },
   { name: "SHOP", to: "/Shop" },
@@ -21,8 +36,19 @@ const navigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+// const drawerWidth = 240;
+
+// const DrawerHeader = styled('div')(({ theme }) => ({
+//   display: 'flex',
+//   alignItems: 'center',
+//   padding: theme.spacing(0, 1),
+//   // necessary for content to be below app bar
+//   ...theme.mixins.toolbar,
+//   justifyContent: 'flex-start',
+// }));
 
 const DefaultLayout = () => {
+  
   const { currentUser, userToken, setCurrentUser, setUserToken } =
     userStateContext();
   const [searchTerm, setSearchTerm] = useState("");
@@ -44,14 +70,13 @@ const DefaultLayout = () => {
     });
   };
 
-  {
-    /** gio hang */
-  }
+  /** gio hang */
+
   const [selectedCategory, setCategory] = useState(null);
   const [isShowModal, setShowModal] = useState(false);
   const [selectedProduct, setProduct] = useState(null);
   const [cart, setCart] = useState([]);
-  const [isShowCart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   const onClickCategoryHandler = (cat_id) => {
     setCategory(cat_id);
@@ -81,24 +106,26 @@ const DefaultLayout = () => {
   {
     /** icon gio hang */
   }
+  const cartRef = useRef(null);
+
   const onShowCartHandler = () => {
-    setShowCart(true);
+    cartRef.current.style.right = '0';
+  };
+
+  const onCloseCartHandler = () => {
+    cartRef.current.style.right = '-100%';
   };
   {
     /** icon gio hang */
   }
-
-  //   console.log(selectedCategory);
-  // let filteredProducts = [...products];
-  // if (selectedCategory != null) {
-  //   filteredProducts = products.filter(
-  //     (product) => product.category_id == selectedCategory
-  //   );
-  // }
-  {
-    /** gio hang */
-  }
-
+  // const theme = useTheme();
+  // const [setOpen] = React.useState(false);
+  // const handleDrawerOpen = () => {
+  //   setOpen(true);
+  // };
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
   return (
     <Box>
       <Box className="min-h-full max-w-full">
@@ -256,20 +283,77 @@ const DefaultLayout = () => {
 
                       {/** icon gio hang */}
                       <Box>
-                        <Box style={{ position: "relative" }}>
+                        <Box style={{ position: 'relative' }}>
                           <Box>
-                            <Button
-                              style={{ cursor: "pointer" }}
-                              onClick={onShowCartHandler}
-                            >
-                              <FaShoppingBag  />
-                              <span className="relative mt-[-5px]">
-                                <sup>{cart.lenght}</sup>
-                              </span>
+                            <Button style={{ cursor: 'pointer'}} onClick={onShowCartHandler}>
+                            <FaShoppingBag />
                             </Button>
+                            {showCart && (
+                              <Box className="cart" ref={cartRef}>
+                                <Button style={{ cursor: 'pointer' }} onClick={onCloseCartHandler}>
+                                  <FaTimes />
+                                </Button>
+                              </Box>
+                            )}
                           </Box>
                         </Box>
                       </Box>
+                      {/* <Box sx={{ display: 'flex' }}>
+                        <Box  open={open}>
+                          <Toolbar>
+                            <IconButton color="inherit" aria-label="open drawer" edge="end" onClick={handleDrawerOpen}
+                            sx={{ ...(open && { display: 'none'}) }}>
+                              <FaShoppingBag />
+                            </IconButton>
+                          </Toolbar>
+                          <Drawer
+                          sx={{
+                            width: drawerWidth,
+                            flexShrink: 0,
+                            '& .MuiDrawer-paper': {
+                              width: drawerWidth,
+                            },
+                          }}
+                          variant="persistent"
+                          anchor="right"
+                          open={open}
+                        >
+                          <DrawerHeader>
+                            <IconButton onClick={handleDrawerClose}>
+                              {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                            </IconButton>
+                          </DrawerHeader>
+                          <Divider />
+                          <List>
+                            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                              <ListItem key={text} disablePadding>
+                                <ListItemButton>
+                                  <ListItemIcon>
+                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                  </ListItemIcon>
+                                  <ListItemText primary={text} />
+                                </ListItemButton>
+                              </ListItem>
+                            ))}
+                          </List>
+                          <Divider />
+                          <List>
+                            {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                              <ListItem key={text} disablePadding>
+                                <ListItemButton>
+                                  <ListItemIcon>
+                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                  </ListItemIcon>
+                                  <ListItemText primary={text} />
+                                </ListItemButton>
+                              </ListItem>
+                            ))}
+                          </List>
+                        </Drawer>
+                        </Box>
+                        
+                      </Box> */}
+                      
                       {/** icon gio hang */}
                     </Box>
                   </form>
@@ -506,6 +590,7 @@ const DefaultLayout = () => {
             </Box>
           )}
         </Disclosure>
+          
         <Outlet />
       </Box>
     </Box>
