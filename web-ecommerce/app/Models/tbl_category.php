@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_category extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'catName',
+    ];
+
+    public function subcategories()
+    {
+        return $this->hasMany(tbl_subCategory::class);
+    }
+
 }

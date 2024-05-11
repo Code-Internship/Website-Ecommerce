@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class tbl_wishlist extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'cusID',
+        'prodID',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsTo(tbl_product::class);
+    }
+
 }

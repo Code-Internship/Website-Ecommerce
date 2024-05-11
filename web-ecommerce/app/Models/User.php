@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -42,4 +43,30 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function carts()
+    {
+        return $this->hasMany(tbl_cart::class);
+    }
+
+    public function whshlists()
+    {
+        return $this->hasMany(tbl_wishlist::class);
+    }
+
+    public function shipments()
+    {
+        return $this->hasMany(tbl_shipment::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(tbl_payment::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(tbl_order::class);
+    }
+
 }
