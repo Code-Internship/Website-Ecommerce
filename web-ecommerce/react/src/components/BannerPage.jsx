@@ -26,7 +26,7 @@ const BannerPage = () => {
   };
 
   return (
-    
+
     <Box>
       {/** Banner chinh - Nghia*/}
       <Box>
@@ -1099,12 +1099,12 @@ const BannerPage = () => {
         </TabContext>
       </Box>
       {/** Banner phu 5 - Ngoc */}
-      
+
       <Box className="cart" style={{
-        width: "50%",
+        // width: "50%",
         margin: "auto",
         textAlign: "center",
-        paddingTop: "30px",        
+        paddingTop: "30px",
         // position: "fixed",
         height: "50vh",
         width: "400px",
@@ -1113,7 +1113,7 @@ const BannerPage = () => {
         backgroundColor: "#f5c7c7",
         padding: "12px 30px",
         overflowY: "scroll",
-        right: "-100%",
+        // right: "-100%",
         transition: "all 0.3s ease",
       }}>
       <FaTimes />
@@ -1145,7 +1145,7 @@ const BannerPage = () => {
                 </td>
                 <td style={{ cursor: 'pointer' }}>Xóa</td>
               </tr>
-              
+
             </tbody>
           </table>
           <div className="price-total">
@@ -1158,7 +1158,7 @@ const BannerPage = () => {
         </form>
       </Box>
     </Box>
-    
+
   );
 };
 
